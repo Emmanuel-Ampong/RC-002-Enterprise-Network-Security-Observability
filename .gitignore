@@ -1,0 +1,34 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+*.swp
+*.tmp
+*~
+
+# Logs and temporary files
+*.log
+*.temp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Packet captures that may become very large
+*.pcap
+*.pcapng
+
+# Local datasets / generated outputs
+datasets/raw/
+results/raw/
