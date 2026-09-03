@@ -46,3 +46,33 @@ Develop:
 - Research constraints.
 - Acceptance criteria.
 - Initial requirements traceability.
+
+---
+
+## Requirements Engineering — Initial Baseline
+
+### Activities
+
+- Developed the initial RC-002 functional requirements.
+- Defined non-functional requirements.
+- Defined laboratory and measurement constraints.
+- Established measurable acceptance criteria.
+- Defined requirement evaluation statuses.
+- Created preliminary objective-to-requirement traceability.
+
+### Key Methodological Decision
+
+Requirements were defined independently of specific telemetry
+technologies.
+
+### Rationale
+
+Separating capability requirements from technology selection reduces
+tool-driven design bias and allows candidate technologies to be
+evaluated against predefined research needs.
+
+### Next Step
+
+Define the RC-002 telemetry model, measurement metrics, hypotheses,
+and technology-selection criteria.
+
