@@ -76,3 +76,32 @@ evaluated against predefined research needs.
 Define the RC-002 telemetry model, measurement metrics, hypotheses,
 and technology-selection criteria.
 
+---
+
+## Telemetry and Measurement Design
+
+### Activities
+
+- Defined the initial RC-002 telemetry model.
+- Classified telemetry into infrastructure, communication,
+  security-control, host/service, and experimental-context categories.
+- Defined the telemetry lifecycle.
+- Established six preliminary measurement dimensions.
+- Defined three research hypotheses and corresponding null hypotheses.
+- Identified independent, dependent, controlled, and potential
+  confounding variables.
+
+### Key Methodological Decision
+
+Behavioral differentiation will be evaluated using predefined
+measurements rather than subjective dashboard interpretation.
+
+### Research Boundary
+
+Observable differences between normal and controlled abnormal
+conditions will not be treated as proof of automated threat detection.
+
+### Next Step
+
+Develop technology-selection criteria and evaluate candidate telemetry
+technologies against RC-002 requirements.
