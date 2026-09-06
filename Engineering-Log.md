@@ -105,3 +105,35 @@ conditions will not be treated as proof of automated threat detection.
 
 Develop technology-selection criteria and evaluate candidate telemetry
 technologies against RC-002 requirements.
+
+---
+
+## Technology and Laboratory Platform Evaluation
+
+### Activities
+
+- Evaluated Packet Tracer, GNS3, GNS3 with a lightweight telemetry node,
+  and a full multi-tool virtual laboratory.
+- Considered available local computing resources during platform
+  evaluation.
+- Selected a lightweight experimental architecture as the preferred
+  initial direction.
+- Defined a proposed minimum implementation stack.
+
+### Preliminary Architecture
+
+GNS3 will provide the network experimentation environment.
+
+A lightweight Linux telemetry node will provide centralized collection
+and preservation of selected experimental telemetry.
+
+### Key Design Decision
+
+RC-002 will prioritize minimum sufficient observability capability over
+maximum technology quantity.
+
+### Next Step
+
+Formally record the laboratory platform decision using an Architectural
+Decision Record before beginning environment installation.
+
