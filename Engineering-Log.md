@@ -137,3 +137,56 @@ maximum technology quantity.
 Formally record the laboratory platform decision using an Architectural
 Decision Record before beginning environment installation.
 
+---
+
+## M1 — GNS3 Laboratory Environment Deployment
+
+### Status
+
+**VERIFIED**
+
+### Activities
+
+- Installed GNS3 Desktop 2.2.61.
+- Imported the corresponding GNS3 VM into Oracle VirtualBox.
+- Configured the VM with 2048 MB RAM and 1 vCPU.
+- Configured host-only and NAT networking.
+- Integrated the GNS3 VM with GNS3 Desktop.
+- Verified local and VM-based GNS3 servers.
+
+### Issue Encountered
+
+The GNS3 VM initially failed to start because VirtualBox could not attach
+the VM to the host-only network interface.
+
+Error:
+
+`VERR_INTNET_FLT_IF_NOT_FOUND`
+
+### Resolution
+
+The problem was isolated to the VirtualBox networking layer by testing
+the VM independently of GNS3.
+
+VirtualBox networking components were repaired/reinstalled and the host
+system was restarted.
+
+Following repair, the VM successfully booted and GNS3 successfully
+managed the VM.
+
+### Verification
+
+Both the local GNS3 server and GNS3 VM server displayed healthy green
+status indicators.
+
+Normal non-administrator launch of GNS3 was also verified.
+
+### Result
+
+**PASS**
+
+### Next Step
+
+Develop the minimum experimental topology for RC-002 and select the
+network and Linux node types required for telemetry experimentation.
+
