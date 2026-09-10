@@ -190,3 +190,66 @@ Normal non-administrator launch of GNS3 was also verified.
 Develop the minimum experimental topology for RC-002 and select the
 network and Linux node types required for telemetry experimentation.
 
+## 2026-09-10 — M2 Minimum Observability Topology
+
+### Objective
+
+Establish and validate the minimum network infrastructure required to support
+subsequent security-observability and telemetry experiments in RC-002.
+
+### Implementation
+
+- Built the RC-002 experimental topology in GNS3.
+- Deployed FRRouting as `EDGE-R1`.
+- Created three internal network zones:
+  - USER — `192.168.10.0/24`
+  - SERVER — `192.168.20.0/24`
+  - OBSERVABILITY — `192.168.30.0/24`
+- Added a GNS3 NAT-based WAN segment on `192.168.42.0/24`.
+- Configured EDGE-R1 as the Layer-3 gateway between the internal zones.
+- Deployed two VPCS user endpoints: `CLIENT-1` and `CLIENT-2`.
+- Deployed lightweight Alpine Linux `SERVER-1`.
+- Deployed Ubuntu `TELEMETRY-1`.
+- Configured persistent addressing for the Linux endpoints.
+- Enabled external connectivity through EDGE-R1 using IPv4 forwarding and
+  iptables source NAT/MASQUERADE.
+- Configured DNS resolution on SERVER-1.
+- Installed and configured Lighttpd on SERVER-1 to provide reproducible HTTP
+  application traffic.
+- Configured Lighttpd for automatic startup.
+
+### Verification
+
+Verified:
+
+- same-zone USER connectivity;
+- bidirectional inter-zone routing;
+- connectivity between USER, SERVER, and OBSERVABILITY zones;
+- EDGE-R1 external connectivity;
+- internal endpoint Internet connectivity through source NAT;
+- DNS resolution;
+- HTTP service operation on SERVER-1;
+- cross-zone HTTP access from TELEMETRY-1 to SERVER-1;
+- SERVER-1 addressing and HTTP-service persistence after reboot.
+
+All required M2 functional tests passed.
+
+### Engineering Observations
+
+Initial routed ICMP tests involving Linux endpoints exhibited elevated latency
+on several first replies before stabilizing to low-millisecond response times.
+No packet loss was observed.
+
+The cause was not established during M2 and is therefore recorded without
+attributing it to a specific mechanism. It may be investigated later using
+packet capture and telemetry evidence.
+
+### Outcome
+
+M2 established a reproducible network and application baseline for the
+Project Aegis OBSERVE phase.
+
+Centralized telemetry collection, traffic inspection, anomaly generation,
+detection, and event correlation remain intentionally outside the M2 scope.
+
+**Milestone Status: VERIFIED**

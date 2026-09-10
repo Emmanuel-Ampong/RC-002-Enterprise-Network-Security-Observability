@@ -4,9 +4,24 @@
 
 ## Project Status
 
-🟡 **Research Design / Requirements Development**
+🟢 **Active Development — OBSERVE Phase**
 
-RC-002 is the second research project within Project Aegis and builds upon the secure multi-site enterprise infrastructure developed and validated in RC-001.
+### Milestone Progress
+
+| Milestone | Description | Status |
+|---|---|---|
+| M1 | GNS3 Laboratory Environment | ✅ Complete |
+| M2 | Minimum Observability Topology | ✅ Complete |
+| M3 | Telemetry Collection Foundation | 🔜 Next |
+
+RC-002 has completed its laboratory and network foundation. A segmented
+GNS3 environment now provides USER, SERVER, OBSERVABILITY, and WAN zones
+with validated Layer-3 routing, Internet connectivity, and reproducible
+HTTP application traffic.
+
+The project now transitions from establishing the experimental network
+baseline to **M3 — Telemetry Collection Foundation**, where centralized
+collection of security-relevant network and host events will begin.
 
 ## Research Question
 
