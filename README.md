@@ -12,16 +12,24 @@
 |---|---|---|
 | M1 | GNS3 Laboratory Environment | ✅ Complete |
 | M2 | Minimum Observability Topology | ✅ Complete |
-| M3 | Telemetry Collection Foundation | 🔜 Next |
+| M3 | Telemetry Collection Foundation | ✅ Complete |
 
-RC-002 has completed its laboratory and network foundation. A segmented
-GNS3 environment now provides USER, SERVER, OBSERVABILITY, and WAN zones
-with validated Layer-3 routing, Internet connectivity, and reproducible
-HTTP application traffic.
+RC-002 has completed its laboratory, network, and centralized telemetry
+foundation. The segmented GNS3 environment now provides USER, SERVER,
+OBSERVABILITY, and WAN zones with validated Layer-3 routing, Internet/NAT
+connectivity, a reproducible HTTP application service, and centralized
+source-attributable telemetry.
 
-The project now transitions from establishing the experimental network
-baseline to **M3 — Telemetry Collection Foundation**, where centralized
-collection of security-relevant network and host events will begin.
+M3 established centralized Syslog collection on TELEMETRY-1 from SERVER-1 and
+EDGE-R1, demonstrated source-specific telemetry storage and multi-source
+attribution, and verified persistence after restart. Legitimate routed,
+Internet/NAT, and HTTP operations remained functional during the tested
+telemetry configuration.
+
+The project is now prepared to progress from telemetry collection toward
+controlled observability experiments involving normal and abnormal network
+conditions. The scope and acceptance criteria for the next milestone will be
+defined before implementation begins.
 
 ## Research Question
 

@@ -2,8 +2,8 @@
 
 ## Project Initiation
 
-**Project:** RC-002 — Enterprise Network Security Observability and Telemetry  
-**Project Aegis Phase:** OBSERVE  
+**Project:** RC-002 — Enterprise Network Security Observability and Telemetry
+**Project Aegis Phase:** OBSERVE
 **Stage:** Research Design / Requirements Development
 
 ### Activities Completed
@@ -253,3 +253,62 @@ Centralized telemetry collection, traffic inspection, anomaly generation,
 detection, and event correlation remain intentionally outside the M2 scope.
 
 **Milestone Status: VERIFIED**
+
+## M3 — Telemetry Collection Foundation
+
+**Status:** Complete
+**Verification:** `Docs/06-Verification/RC002-M3-Telemetry-Collection-Foundation.md`
+
+### Engineering Summary
+
+Established centralized security telemetry collection on TELEMETRY-1 using
+rsyslog. Remote Syslog reception was enabled over UDP/TCP port 514 with
+source-specific storage based on the observed sender IP address.
+
+SERVER-1 and EDGE-R1 were configured as persistent remote Syslog sources.
+Controlled events from both systems were successfully received, attributed,
+and stored separately by TELEMETRY-1.
+
+### Key Results
+
+- Verified rsyslog collector operation on TELEMETRY-1.
+- Verified centralized telemetry from SERVER-1 (`192.168.20.10`).
+- Verified centralized telemetry from EDGE-R1 (`192.168.30.1`).
+- Demonstrated source-specific storage and multi-source attribution.
+- Verified telemetry forwarding after restart.
+- Confirmed legitimate routed connectivity, Internet/NAT access, and the
+  SERVER-1 HTTP service remained operational.
+
+### Engineering Finding
+
+EDGE-R1 restart testing exposed a persistence limitation inherited from the M2
+network baseline. The WAN DHCP configuration and manually configured iptables
+MASQUERADE rule did not initially recover automatically after router restart.
+
+Persistent WAN DHCP configuration was subsequently implemented through
+`/etc/network/interfaces`, while the verified MASQUERADE rule was stored using
+the appliance's native OpenRC iptables save/restore mechanism.
+
+A subsequent restart confirmed automatic recovery of WAN addressing, the
+default route, NAT, Syslog forwarding, and external connectivity.
+
+### Research Implication
+
+M3 provides evidence toward H1 by demonstrating centralized, source-attributable
+telemetry from multiple network sources. It also provides preliminary evidence
+toward H3 because the legitimate network operations evaluated remained
+functional alongside centralized telemetry.
+
+H2 was not tested during M3; controlled abnormal-behavior experiments remain
+outside this milestone's scope.
+
+### Evidence
+
+Evidence is stored under:
+
+`Images/M3-Evidence/`
+
+Six curated screenshots document collector operation, SERVER-1 and EDGE-R1
+telemetry, multi-source attribution, post-restart persistence, and preservation
+of normal network operation.
+
