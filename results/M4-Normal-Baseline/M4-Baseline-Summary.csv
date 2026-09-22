@@ -1,0 +1,5 @@
+scenario,metric,trials,mean,minimum,maximum,unit,success_condition,status
+N01-ICMP-Interzone,average_rtt,5,3.388,2.664,5.450,ms,0_percent_packet_loss_and_6_packets_per_trial,PASS
+N02-HTTP-Application,http_completion_time,5,0.0097632,0.007903,0.011616,seconds,http_200_and_tcp_handshake_observed,PASS
+N03-Internet-ICMP,average_rtt,5,116.3288,55.676,277.110,ms,0_percent_packet_loss,PASS
+N04-System-Activity,source_attributed_syslog,2,N/A,N/A,N/A,categorical,controlled_and_routine_events_source_attributed,PASS

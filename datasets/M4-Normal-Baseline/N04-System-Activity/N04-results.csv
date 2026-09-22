@@ -1,0 +1,3 @@
+source,source_ip,telemetry_type,controlled_event_observed,routine_crond_observed,source_attribution,status
+SERVER-1,192.168.20.10,syslog,yes,yes,yes,PASS
+EDGE-R1,192.168.30.1,syslog,yes,yes,yes,PASS

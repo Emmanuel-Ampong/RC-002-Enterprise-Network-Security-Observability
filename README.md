@@ -1,35 +1,27 @@
-# RC-002 — Enterprise Network Security Observability and Telemetry
+﻿# RC-002 â€” Enterprise Network Security Observability and Telemetry
 
-**Project Aegis — OBSERVE Phase**
+**Project Aegis â€” OBSERVE Phase**
 
 ## Project Status
 
-🟢 **Active Development — OBSERVE Phase**
+ðŸŸ¢ **Active Development â€” OBSERVE Phase**
 
 ### Milestone Progress
 
 | Milestone | Description | Status |
 |---|---|---|
-| M1 | GNS3 Laboratory Environment | ✅ Complete |
-| M2 | Minimum Observability Topology | ✅ Complete |
-| M3 | Telemetry Collection Foundation | ✅ Complete |
+| M1 | GNS3 Laboratory Environment | Complete |
+| M2 | Minimum Observability Topology | Complete |
+| M3 | Telemetry Collection Foundation | Complete |
+| M4 | Normal Traffic Baseline and Telemetry Characterization | Complete |
 
-RC-002 has completed its laboratory, network, and centralized telemetry
-foundation. The segmented GNS3 environment now provides USER, SERVER,
-OBSERVABILITY, and WAN zones with validated Layer-3 routing, Internet/NAT
-connectivity, a reproducible HTTP application service, and centralized
-source-attributable telemetry.
+RC-002 has completed its laboratory, network, centralized telemetry, and normal-baseline foundation. The segmented GNS3 environment provides USER, SERVER, OBSERVABILITY, and WAN zones with validated Layer-3 routing, Internet/NAT connectivity, a reproducible HTTP application service, and centralized source-attributable telemetry.
 
-M3 established centralized Syslog collection on TELEMETRY-1 from SERVER-1 and
-EDGE-R1, demonstrated source-specific telemetry storage and multi-source
-attribution, and verified persistence after restart. Legitimate routed,
-Internet/NAT, and HTTP operations remained functional during the tested
-telemetry configuration.
+M3 established centralized Syslog collection on TELEMETRY-1 from SERVER-1 and EDGE-R1, demonstrated source-specific telemetry storage and multi-source attribution, and verified persistence after restart.
 
-The project is now prepared to progress from telemetry collection toward
-controlled observability experiments involving normal and abnormal network
-conditions. The scope and acceptance criteria for the next milestone will be
-defined before implementation begins.
+M4 established a measured reference condition for legitimate behavior using inter-zone ICMP, HTTP application access, Internet ICMP, and normal system activity. Repeated trials characterized packet behavior, latency, application completion time, and source-attributed Syslog observations while legitimate operations remained functional.
+
+The project is now prepared for controlled abnormal-behavior experiments in which observations can be compared against the M4 normal reference condition. M4 does not itself test H2 or establish that deviation from the baseline constitutes abnormal or malicious behavior.
 
 ## Research Question
 
@@ -41,7 +33,7 @@ To design, implement, and experimentally evaluate a centralized network telemetr
 
 ## Project Aegis Progression
 
-**BUILD → HARDEN → OBSERVE → DETECT → INVESTIGATE → RESPOND → ADAPT**
+**BUILD â†’ HARDEN â†’ OBSERVE â†’ DETECT â†’ INVESTIGATE â†’ RESPOND â†’ ADAPT**
 
 RC-001 established the BUILD and HARDEN foundation through secure enterprise network architecture, segmentation, routing, management hardening, infrastructure services, and experimental validation.
 
@@ -66,9 +58,11 @@ RC-002 will follow a requirements-driven and evidence-based engineering methodol
 
 ## Current Stage
 
-**Research problem and objectives defined.**
+**M4 - Normal Traffic Baseline and Telemetry Characterization complete.**
 
-Next stage: **Requirements Engineering**
+A measured normal reference condition has been established for subsequent controlled abnormal-behavior comparison.
+
+H2 has not yet been tested. The next experimental stage will introduce controlled abnormal conditions and compare their observable characteristics against the M4 baseline.
 
 ## Relationship to RC-001
 
@@ -82,5 +76,5 @@ RC-002 extends that foundation by asking:
 
 ---
 
-**Project Aegis**  
+**Project Aegis**
 *Securing Tomorrow's Digital Infrastructure Through Research*

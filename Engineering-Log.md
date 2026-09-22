@@ -1,8 +1,8 @@
-# RC-002 Engineering Log
+﻿# RC-002 Engineering Log
 
 ## Project Initiation
 
-**Project:** RC-002 — Enterprise Network Security Observability and Telemetry
+**Project:** RC-002 â€” Enterprise Network Security Observability and Telemetry
 **Project Aegis Phase:** OBSERVE
 **Stage:** Research Design / Requirements Development
 
@@ -49,7 +49,7 @@ Develop:
 
 ---
 
-## Requirements Engineering — Initial Baseline
+## Requirements Engineering â€” Initial Baseline
 
 ### Activities
 
@@ -139,7 +139,7 @@ Decision Record before beginning environment installation.
 
 ---
 
-## M1 — GNS3 Laboratory Environment Deployment
+## M1 â€” GNS3 Laboratory Environment Deployment
 
 ### Status
 
@@ -190,7 +190,7 @@ Normal non-administrator launch of GNS3 was also verified.
 Develop the minimum experimental topology for RC-002 and select the
 network and Linux node types required for telemetry experimentation.
 
-## 2026-09-10 — M2 Minimum Observability Topology
+## 2026-09-10 â€” M2 Minimum Observability Topology
 
 ### Objective
 
@@ -202,9 +202,9 @@ subsequent security-observability and telemetry experiments in RC-002.
 - Built the RC-002 experimental topology in GNS3.
 - Deployed FRRouting as `EDGE-R1`.
 - Created three internal network zones:
-  - USER — `192.168.10.0/24`
-  - SERVER — `192.168.20.0/24`
-  - OBSERVABILITY — `192.168.30.0/24`
+  - USER â€” `192.168.10.0/24`
+  - SERVER â€” `192.168.20.0/24`
+  - OBSERVABILITY â€” `192.168.30.0/24`
 - Added a GNS3 NAT-based WAN segment on `192.168.42.0/24`.
 - Configured EDGE-R1 as the Layer-3 gateway between the internal zones.
 - Deployed two VPCS user endpoints: `CLIENT-1` and `CLIENT-2`.
@@ -254,7 +254,7 @@ detection, and event correlation remain intentionally outside the M2 scope.
 
 **Milestone Status: VERIFIED**
 
-## M3 — Telemetry Collection Foundation
+## M3 â€” Telemetry Collection Foundation
 
 **Status:** Complete
 **Verification:** `Docs/06-Verification/RC002-M3-Telemetry-Collection-Foundation.md`
@@ -312,3 +312,81 @@ Six curated screenshots document collector operation, SERVER-1 and EDGE-R1
 telemetry, multi-source attribution, post-restart persistence, and preservation
 of normal network operation.
 
+
+---
+
+## M4 — Normal Traffic Baseline and Telemetry Characterization
+
+**Status:** VERIFIED / PASS
+**Project Aegis Phase:** OBSERVE
+
+### Objective
+
+Establish a measured reference condition for legitimate network and system behavior in the RC-002 environment before introducing controlled abnormal-behavior experiments.
+
+Four normal-operation scenarios were evaluated:
+
+- N01 — Inter-zone ICMP
+- N02 — HTTP application access
+- N03 — Internet ICMP
+- N04 — Normal system activity
+
+N01, N02, and N03 were each executed across five controlled trials. N04 evaluated centralized Syslog behavior from SERVER-1 and EDGE-R1.
+
+### Key Results
+
+- N01 completed all five trials with 0% packet loss, six captured ICMP packets per trial, and zero kernel drops.
+- N01 mean trial-average RTT was 3.388 ms, with observed trial averages ranging from 2.664 ms to 5.450 ms.
+- N02 returned HTTP 200 in all five trials.
+- N02 captured 10 TCP packets per trial with SYN and SYN-ACK behavior observed and zero kernel drops.
+- N02 mean completion time was 0.0097632 seconds, ranging from 0.007903 to 0.011616 seconds.
+- N03 completed all five trials with three requests, three replies, and 0% packet loss.
+- N03 mean trial-average RTT was 116.3288 ms, with trial averages ranging from 55.676 ms to 277.110 ms.
+- N04 confirmed controlled and routine Syslog events from SERVER-1 and EDGE-R1 with source attribution preserved.
+- All ten defined M4 acceptance criteria were satisfied within the milestone scope.
+
+### Engineering Finding
+
+The strongest baseline finding was the difference between internal and Internet-facing latency behavior.
+
+N01 produced comparatively low and consistent trial-average RTT values, while N03 exhibited substantially greater RTT variability despite successful delivery and 0% packet loss in every trial.
+
+This demonstrates that legitimate behavior in the laboratory is not necessarily low-variance behavior. A large latency value or latency increase cannot therefore be treated independently as evidence of abnormal activity.
+
+Packet-level evidence and centralized Syslog also provided complementary forms of observability: packet captures described network interactions, while centralized logs preserved source-attributed system context.
+
+### Research Implication
+
+M4 establishes the normal reference condition required before controlled abnormal-behavior comparison.
+
+H2 was not tested during M4. No abnormal condition was introduced, and no normal-versus-abnormal classification claim is made.
+
+The M4 results indicate that later comparisons should use multiple observable characteristics rather than relying on a single fixed latency threshold.
+
+M4 also provides additional evidence relevant to H1 through source-attributed telemetry and additional evidence consistent with H3 because the tested legitimate operations remained functional while observability mechanisms were active.
+
+### Limitations
+
+The baseline represents the implemented RC-002 laboratory environment and the specific scenarios tested.
+
+N01, N02, and N03 used five trials each and should not be generalized to production enterprise traffic distributions.
+
+N03 traversed an external path through the GNS3 NAT environment, so its RTT variability may include conditions outside the RC-002 topology.
+
+N04 was primarily categorical rather than quantitative.
+
+Deviation from the M4 baseline is not, by itself, evidence of malicious or abnormal behavior.
+
+### Evidence
+
+Raw experimental evidence is stored under:
+
+`datasets/M4-Normal-Baseline/`
+
+Derived baseline analysis is stored under:
+
+`results/M4-Normal-Baseline/`
+
+Formal milestone verification:
+
+`Docs/06-Verification/RC002-M4-Normal-Traffic-Baseline.md`

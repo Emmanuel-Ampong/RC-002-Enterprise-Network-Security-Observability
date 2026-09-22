@@ -1,0 +1,9 @@
+=== RC-002 M4 N04 Controlled Normal Events ===
+Collector observation start: 2026-09-21T00:44:05+00:00
+Collector observation end:   2026-09-21T00:47:38+00:00
+
+=== SERVER-1 ===
+2026-09-20T23:44:12+00:00 192.168.20.10 root: RC002-N04 SERVER-1 controlled normal event 01
+
+=== EDGE-R1 ===
+2026-09-20T23:48:50+00:00 _gateway root: RC002-N04 EDGE-R1 controlled normal event 01
