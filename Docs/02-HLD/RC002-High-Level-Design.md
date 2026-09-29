@@ -140,6 +140,8 @@ The logical architecture is:
 
 
 
+```
+
 ## 4. Architectural Components
 
 
