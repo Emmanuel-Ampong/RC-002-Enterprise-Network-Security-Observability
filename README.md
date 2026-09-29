@@ -1,10 +1,10 @@
-﻿# RC-002 â€” Enterprise Network Security Observability and Telemetry
+# RC-002 - Enterprise Network Security Observability and Telemetry
 
-**Project Aegis â€” OBSERVE Phase**
+**Project Aegis - OBSERVE Phase**
 
 ## Project Status
 
-ðŸŸ¢ **Active Development â€” OBSERVE Phase**
+**Active Development - OBSERVE Phase**
 
 ### Milestone Progress
 
@@ -14,6 +14,7 @@
 | M2 | Minimum Observability Topology | Complete |
 | M3 | Telemetry Collection Foundation | Complete |
 | M4 | Normal Traffic Baseline and Telemetry Characterization | Complete |
+| M5 | Controlled Abnormal-Behavior Experiments | In Progress - A01 Complete |
 
 RC-002 has completed its laboratory, network, centralized telemetry, and normal-baseline foundation. The segmented GNS3 environment provides USER, SERVER, OBSERVABILITY, and WAN zones with validated Layer-3 routing, Internet/NAT connectivity, a reproducible HTTP application service, and centralized source-attributable telemetry.
 
@@ -21,7 +22,7 @@ M3 established centralized Syslog collection on TELEMETRY-1 from SERVER-1 and ED
 
 M4 established a measured reference condition for legitimate behavior using inter-zone ICMP, HTTP application access, Internet ICMP, and normal system activity. Repeated trials characterized packet behavior, latency, application completion time, and source-attributed Syslog observations while legitimate operations remained functional.
 
-The project is now prepared for controlled abnormal-behavior experiments in which observations can be compared against the M4 normal reference condition. M4 does not itself test H2 or establish that deviation from the baseline constitutes abnormal or malicious behavior.
+M5 controlled abnormal-behavior experimentation is now in progress. A01 - Elevated Connection Frequency has been completed using five controlled trials and compared against the corresponding M4 normal reference condition. A01 produced a reproducible measurable difference in connection frequency and packet volume while legitimate application operation was preserved. This result contributes evidence toward evaluation of H2 for the tested condition, but does not by itself establish malicious activity, automated detection, or the overall H2 conclusion.
 
 ## Research Question
 
@@ -33,7 +34,7 @@ To design, implement, and experimentally evaluate a centralized network telemetr
 
 ## Project Aegis Progression
 
-**BUILD â†’ HARDEN â†’ OBSERVE â†’ DETECT â†’ INVESTIGATE â†’ RESPOND â†’ ADAPT**
+**BUILD -> HARDEN -> OBSERVE -> DETECT -> INVESTIGATE -> RESPOND -> ADAPT**
 
 RC-001 established the BUILD and HARDEN foundation through secure enterprise network architecture, segmentation, routing, management hardening, infrastructure services, and experimental validation.
 
@@ -58,11 +59,11 @@ RC-002 will follow a requirements-driven and evidence-based engineering methodol
 
 ## Current Stage
 
-**M4 - Normal Traffic Baseline and Telemetry Characterization complete.**
+**M5 - Controlled Abnormal-Behavior Experiments in progress.**
 
-A measured normal reference condition has been established for subsequent controlled abnormal-behavior comparison.
+A01 - Elevated Connection Frequency is complete. Across five controlled trials, 100 HTTP requests produced 100 successful HTTP 200 responses, 100 TCP conversations, and 1,000 displayed HTTP/TCP packets while legitimate application operation remained functional.
 
-H2 has not yet been tested. The next experimental stage will introduce controlled abnormal conditions and compare their observable characteristics against the M4 baseline.
+A01 demonstrated measurable and reproducible behavioral differentiation from the corresponding M4 normal reference condition. This provides scenario-specific evidence relevant to H2; however, overall H2 evaluation remains in progress pending the remaining M5 controlled abnormal-behavior scenarios.
 
 ## Relationship to RC-001
 
