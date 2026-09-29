@@ -1,28 +1,28 @@
-\# RC-002 - High-Level Design
+# RC-002 - High-Level Design
 
 
 
-\## Enterprise Network Security Observability and Telemetry
+## Enterprise Network Security Observability and Telemetry
 
 
 
-\*\*Project:\*\* Project Aegis
+**Project:** Project Aegis
 
-\*\*Research Cycle:\*\* RC-002
+**Research Cycle:** RC-002
 
-\*\*Project Aegis Phase:\*\* OBSERVE
+**Project Aegis Phase:** OBSERVE
 
-\*\*Document Type:\*\* High-Level Design
+**Document Type:** High-Level Design
 
-\*\*Status:\*\* Implemented and retrospectively documented from the verified M1-M4 environment
-
-
-
-\---
+**Status:** Implemented and retrospectively documented from the verified M1-M4 environment
 
 
 
-\## 1. Purpose
+---
+
+
+
+## 1. Purpose
 
 
 
@@ -42,11 +42,11 @@ The architecture is designed to support the RC-002 research question:
 
 
 
-\---
+---
 
 
 
-\## 2. Design Objectives
+## 2. Design Objectives
 
 
 
@@ -54,33 +54,33 @@ The RC-002 architecture is designed to:
 
 
 
-\- Provide a reproducible GNS3-based experimental environment.
+- Provide a reproducible GNS3-based experimental environment.
 
-\- Maintain logical separation between user, server, observability, and WAN functions.
+- Maintain logical separation between user, server, observability, and WAN functions.
 
-\- Preserve legitimate inter-zone and Internet connectivity required by the experiments.
+- Preserve legitimate inter-zone and Internet connectivity required by the experiments.
 
-\- Provide centralized collection of selected system telemetry.
+- Provide centralized collection of selected system telemetry.
 
-\- Preserve source attribution for collected telemetry.
+- Preserve source attribution for collected telemetry.
 
-\- Support packet-level observation of selected network interactions.
+- Support packet-level observation of selected network interactions.
 
-\- Establish a measurable normal-operation reference condition.
+- Establish a measurable normal-operation reference condition.
 
-\- Support subsequent controlled abnormal-behavior experiments.
+- Support subsequent controlled abnormal-behavior experiments.
 
-\- Permit comparison of observations between normal and controlled abnormal operating conditions.
+- Permit comparison of observations between normal and controlled abnormal operating conditions.
 
-\- Preserve legitimate network and infrastructure-service operation while observability mechanisms are active.
-
-
-
-\---
+- Preserve legitimate network and infrastructure-service operation while observability mechanisms are active.
 
 
 
-\## 3. High-Level Architecture
+---
+
+
+
+## 3. High-Level Architecture
 
 
 
@@ -108,43 +108,43 @@ The logical architecture is:
 
 ```text
 
-&#x20;                   WAN / INTERNET
+                    WAN / INTERNET
 
-&#x20;                  192.168.42.0/24
+                   192.168.42.0/24
 
-&#x20;                         |
+                          |
 
-&#x20;                        NAT
+                         NAT
 
-&#x20;                         |
+                          |
 
-&#x20;                      EDGE-R1
+                       EDGE-R1
 
-&#x20;                   /      |      \\
+                    /      |      \\
 
-&#x20;                  /       |       \\
+                   /       |       \\
 
-&#x20;          ACCESS-SW1  SERVER-SW1  OBS-SW1
+           ACCESS-SW1  SERVER-SW1  OBS-SW1
 
-&#x20;             |   |         |         |
+              |   |         |         |
 
-&#x20;        CLIENT-1 CLIENT-2 SERVER-1 TELEMETRY-1
+         CLIENT-1 CLIENT-2 SERVER-1 TELEMETRY-1
 
-&#x20;             |               |         |
+              |               |         |
 
-&#x20;          USER ZONE       SERVER     OBSERVABILITY
+           USER ZONE       SERVER     OBSERVABILITY
 
-&#x20;       192.168.10.0/24 192.168.20.0/24 192.168.30.0/24
-
-
+        192.168.10.0/24 192.168.20.0/24 192.168.30.0/24
 
 
 
-\## 4. Architectural Components
+
+
+## 4. Architectural Components
 
 
 
-\### 4.1 EDGE-R1
+### 4.1 EDGE-R1
 
 
 
@@ -166,7 +166,7 @@ Generation of infrastructure telemetry used in centralized observation.
 
 
 
-\### 4.2 User Zone
+### 4.2 User Zone
 
 
 
@@ -178,7 +178,7 @@ CLIENT-1 and CLIENT-2 provide controlled endpoints from which legitimate and exp
 
 
 
-\### 4.3 Server Zone
+### 4.3 Server Zone
 
 
 
@@ -194,7 +194,7 @@ SERVER-1 also acts as a telemetry source for centralized system-event collection
 
 
 
-\### 4.4 Observability Zone
+### 4.4 Observability Zone
 
 
 
@@ -210,7 +210,7 @@ The separation of telemetry infrastructure from user and server systems provides
 
 
 
-\### 4.5 WAN/Internet Zone
+### 4.5 WAN/Internet Zone
 
 
 
@@ -222,7 +222,7 @@ This allows RC-002 to observe both internal network interactions and traffic tra
 
 
 
-\## 5. Observability Architecture
+## 5. Observability Architecture
 
 
 
@@ -258,7 +258,7 @@ This architecture allows network interactions and system-generated events to be 
 
 
 
-\## 6. Experimental Architecture
+## 6. Experimental Architecture
 
 
 
@@ -296,7 +296,7 @@ RC-002 evaluates whether selected telemetry makes behavioral differences observa
 
 
 
-\## 7. Design Principles
+## 7. Design Principles
 
 
 
@@ -352,7 +352,7 @@ Research conclusions should be based on retained measurements and experimental e
 
 
 
-\## 8. Relationship to Project Aegis
+## 8. Relationship to Project Aegis
 
 
 
@@ -376,7 +376,7 @@ Its purpose is to establish whether security-relevant behavior can be systematic
 
 
 
-\## 9. Relationship to the Low-Level Design
+## 9. Relationship to the Low-Level Design
 
 
 
@@ -392,7 +392,7 @@ Docs/03-LLD/RC002-Low-Level-Design.md
 
 
 
-\## 10. Documentation Note
+## 10. Documentation Note
 
 
 

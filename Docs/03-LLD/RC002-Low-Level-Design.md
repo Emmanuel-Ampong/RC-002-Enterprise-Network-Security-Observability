@@ -1,28 +1,28 @@
-\# RC-002 - Low-Level Design
+# RC-002 - Low-Level Design
 
 
 
-\## Enterprise Network Security Observability and Telemetry
+## Enterprise Network Security Observability and Telemetry
 
 
 
-\*\*Project:\*\* Project Aegis
+**Project:** Project Aegis
 
-\*\*Research Cycle:\*\* RC-002
+**Research Cycle:** RC-002
 
-\*\*Project Aegis Phase:\*\* OBSERVE
+**Project Aegis Phase:** OBSERVE
 
-\*\*Document Type:\*\* Low-Level Design
+**Document Type:** Low-Level Design
 
-\*\*Status:\*\* Implemented and retrospectively documented from the verified M1-M4 environment
-
-
-
-\---
+**Status:** Implemented and retrospectively documented from the verified M1-M4 environment
 
 
 
-\## 1. Purpose
+---
+
+
+
+## 1. Purpose
 
 
 
@@ -38,11 +38,11 @@ This document describes the environment that was actually implemented and verifi
 
 
 
-\---
+---
 
 
 
-\## 2. Laboratory Platform
+## 2. Laboratory Platform
 
 
 
@@ -54,21 +54,21 @@ The verified laboratory environment includes:
 
 
 
-\- GNS3 Desktop 2.2.61.
+- GNS3 Desktop 2.2.61.
 
-\- GNS3 VM 2.2.61.
+- GNS3 VM 2.2.61.
 
-\- VirtualBox 7.2.4.
+- VirtualBox 7.2.4.
 
-\- GNS3 VM configured with 1 vCPU and 2048 MB RAM.
+- GNS3 VM configured with 1 vCPU and 2048 MB RAM.
 
-\- FRRouting 8.2.2 for EDGE-R1.
+- FRRouting 8.2.2 for EDGE-R1.
 
-\- VPCS for lightweight client endpoints.
+- VPCS for lightweight client endpoints.
 
-\- Alpine Linux 3.18.4 for SERVER-1.
+- Alpine Linux 3.18.4 for SERVER-1.
 
-\- Ubuntu Cloud Guest 24.04 LTS for TELEMETRY-1.
+- Ubuntu Cloud Guest 24.04 LTS for TELEMETRY-1.
 
 
 
@@ -76,11 +76,11 @@ The design intentionally uses lightweight components to support reproducible exp
 
 
 
-\---
+---
 
 
 
-\## 3. Implemented Topology
+## 3. Implemented Topology
 
 
 
@@ -90,25 +90,26 @@ The implemented minimum observability topology is:
 
 ```text
 
-&#x20;                        NAT2 / WAN
+                         NAT2 / WAN
 
-&#x20;                     192.168.42.0/24
+                      192.168.42.0/24
 
-&#x20;                             |
+                              |
 
-&#x20;                          EDGE-R1
+                           EDGE-R1
 
-&#x20;                             |
+                              |
 
-&#x20;            +----------------+----------------+
+             +----------------+----------------+
 
-&#x20;            |                |                |
+             |                |                |
 
-&#x20;       ACCESS-SW1        SERVER-SW1         OBS-SW1
+        ACCESS-SW1        SERVER-SW1         OBS-SW1
 
-&#x20;         /    \\               |                |
+          /    \\               |                |
 
-&#x20;    CLIENT-1 CLIENT-2      SERVER-1       TELEMETRY-1
+     CLIENT-1 CLIENT-2      SERVER-1       TELEMETRY-1
+```
 
 
 
@@ -116,7 +117,7 @@ The topology separates user, server, observability, and external-connectivity fu
 
 
 
-\## 4. Network Zones
+## 4. Network Zones
 
 Zone	Network	Devices / Function
 
@@ -130,11 +131,11 @@ WAN / INTERNET	192.168.42.0/24	EDGE-R1 WAN interface and GNS3 NAT2
 
 
 
-\## 5. Device Addressing
+## 5. Device Addressing
 
 
 
-\### 5.1 EDGE-R1
+### 5.1 EDGE-R1
 
 
 
@@ -174,7 +175,7 @@ Because eth3 is DHCP-assigned, 192.168.42.184/24 represents the address observed
 
 
 
-\### 5.2 Endpoints
+### 5.2 Endpoints
 
 Device	Address	Default Gateway	Role
 
@@ -188,7 +189,7 @@ TELEMETRY-1	192.168.30.10/24	192.168.30.1	Central telemetry collector and observ
 
 
 
-\## 6. Routing Design
+## 6. Routing Design
 
 
 
@@ -238,7 +239,7 @@ The verified default route is provided through the GNS3 NAT service using:
 
 
 
-\## 7. WAN and NAT Design
+## 7. WAN and NAT Design
 
 
 
@@ -254,7 +255,7 @@ Source NAT is implemented using an iptables POSTROUTING MASQUERADE rule:
 
 
 
-\-A POSTROUTING -o eth3 -j MASQUERADE
+-A POSTROUTING -o eth3 -j MASQUERADE
 
 
 
@@ -266,7 +267,7 @@ NAT functionality was verified through external connectivity tests and observati
 
 
 
-\## 8. WAN and NAT Persistence
+## 8. WAN and NAT Persistence
 
 
 
@@ -288,7 +289,7 @@ These findings resulted in persistence corrections.
 
 
 
-\### 8.1 eth3 DHCP Persistence
+### 8.1 eth3 DHCP Persistence
 
 
 
@@ -306,7 +307,7 @@ The networking service is enabled at boot.
 
 
 
-\### 8.2 iptables Persistence
+### 8.2 iptables Persistence
 
 
 
@@ -317,9 +318,9 @@ The NAT configuration is retained using the appliance's native iptables persiste
 The saved rules include:
 
 
-
-\-A POSTROUTING -o eth3 -j MASQUERADE
-
+'''text
+-A POSTROUTING -o eth3 -j MASQUERADE
+'''
 
 
 The saved rules are retained under:
@@ -350,7 +351,7 @@ External connectivity.
 
 
 
-\## 9. SERVER-1 Design
+## 9. SERVER-1 Design
 
 
 
@@ -380,7 +381,7 @@ Source of centralized host telemetry.
 
 
 
-\## 10. HTTP Application Service
+## 10. HTTP Application Service
 
 
 
@@ -412,7 +413,7 @@ Cross-zone HTTP connectivity from TELEMETRY-1 to SERVER-1 was verified during M2
 
 
 
-\## 11. TELEMETRY-1 Design
+## 11. TELEMETRY-1 Design
 
 
 
@@ -450,7 +451,7 @@ Storage and inspection of collected experimental evidence.
 
 
 
-\## 12. Centralized Syslog Architecture
+## 12. Centralized Syslog Architecture
 
 
 
@@ -473,7 +474,7 @@ The implemented collector configuration uses source-based dynamic file storage.
 The relevant configuration is:
 
 
-
+'''conf
 module(load="imudp")
 
 input(type="imudp" port="514")
@@ -488,11 +489,11 @@ input(type="imtcp" port="514")
 
 template(
 
-&#x20;   name="RC002RemoteLog"
+    name="RC002RemoteLog"
 
-&#x20;   type="string"
+    type="string"
 
-&#x20;   string="/var/log/remote/%FROMHOST-IP%/syslog.log"
+    string="/var/log/remote/%FROMHOST-IP%/syslog.log"
 
 )
 
@@ -500,39 +501,39 @@ template(
 
 if ($inputname == "imudp" or $inputname == "imtcp") then {
 
-&#x20;   action(
+    action(
 
-&#x20;       type="omfile"
+        type="omfile"
 
-&#x20;       dynaFile="RC002RemoteLog"
+        dynaFile="RC002RemoteLog"
 
-&#x20;       createDirs="on"
+        createDirs="on"
 
-&#x20;   )
+    )
 
-&#x20;   stop
+    stop
 
 }
-
+'''
 
 
 The configuration was syntax-validated using:
 
 
-
+'''bash
 rsyslogd -N1
-
+'''
 
 
 The rsyslog service was subsequently verified as active and listening on the configured Syslog ports.
 
 
 
-\## 13. Telemetry Sources
+## 13. Telemetry Sources
 
 
 
-\### 13.1 SERVER-1
+### 13.1 SERVER-1
 
 
 
@@ -556,7 +557,7 @@ The forwarding configuration was verified to persist after restart.
 
 
 
-\### 13.2 EDGE-R1
+### 13.2 EDGE-R1
 
 
 
@@ -584,7 +585,7 @@ The forwarding configuration was verified to persist after restart.
 
 
 
-\### 13.3 TELEMETRY-1
+### 13.3 TELEMETRY-1
 
 
 
@@ -596,73 +597,75 @@ This permits observation of the collector itself while retaining remotely receiv
 
 
 
-\## 14. Telemetry Flow
+## 14. Telemetry Flow
 
 
 
 The principal centralized telemetry paths are:
 
 
+'''text
 
 SERVER-1
 
 192.168.20.10
 
-&#x20;     |
+      |
 
-&#x20;     | Syslog
+      | Syslog
 
-&#x20;     v
+      v
 
 EDGE-R1 routing
 
-&#x20;     |
+      |
 
-&#x20;     v
+      v
 
 TELEMETRY-1
 
 192.168.30.10:514
 
-&#x20;     |
+      |
 
-&#x20;     v
+      v
 
 /var/log/remote/192.168.20.10/syslog.log
-
+'''
 
 
 and:
 
 
+'''text
 
 EDGE-R1
 
 192.168.30.1
 
-&#x20;     |
+      |
 
-&#x20;     | Syslog
+      | Syslog
 
-&#x20;     v
+      v
 
 TELEMETRY-1
 
 192.168.30.10:514
 
-&#x20;     |
+      |
 
-&#x20;     v
+      v
 
 /var/log/remote/192.168.30.1/syslog.log
-
+'''
 
 
 Source-specific storage supports attribution of received events to the observed source IP.
 
 
 
-\## 15. Packet-Level Observation
+## 15. Packet-Level Observation
 
 
 
@@ -704,7 +707,7 @@ Packet capture and centralized Syslog are treated as complementary evidence sour
 
 
 
-\## 16. M4 Normal Baseline Integration
+## 16. M4 Normal Baseline Integration
 
 
 
@@ -736,7 +739,7 @@ These observations form the normal reference condition for subsequent controlled
 
 
 
-\## 17. Operational Preservation
+## 17. Operational Preservation
 
 
 
@@ -770,7 +773,7 @@ It does not imply that the observability architecture has zero performance impac
 
 
 
-\## 18. Experimental Control Considerations
+## 18. Experimental Control Considerations
 
 
 
@@ -830,7 +833,7 @@ Changes to telemetry configuration.
 
 
 
-\## 19. Evidence and Repository Structure
+## 19. Evidence and Repository Structure
 
 
 
@@ -864,7 +867,7 @@ Structured measurements, text evidence, verification documents, and selected scr
 
 
 
-\## 20. Relationship to the High-Level Design
+## 20. Relationship to the High-Level Design
 
 
 
@@ -880,7 +883,7 @@ This LLD provides the implementation-specific detail required to understand and 
 
 
 
-\## 21. Design Limitations
+## 21. Design Limitations
 
 
 
@@ -916,7 +919,7 @@ These limitations define the scope within which RC-002 findings should be interp
 
 
 
-\## 22. Documentation Note
+## 22. Documentation Note
 
 
 
