@@ -1,24 +1,24 @@
-\# RC-002 M5 — Controlled Abnormal-Behavior Experimental Protocol
+# RC-002 M5 — Controlled Abnormal-Behavior Experimental Protocol
 
 
 
-\*\*Project:\*\* Project Aegis — RC-002 Enterprise Network Security Observability and Telemetry  
+**Project:** Project Aegis — RC-002 Enterprise Network Security Observability and Telemetry
 
-\*\*Project Aegis Phase:\*\* OBSERVE  
+**Project Aegis Phase:** OBSERVE
 
-\*\*Milestone:\*\* M5 — Controlled Abnormal-Behavior Experiments  
+**Milestone:** M5 — Controlled Abnormal-Behavior Experiments
 
-\*\*Protocol Status:\*\* PRE-EXPERIMENT  
+**Protocol Status:** PRE-EXPERIMENT
 
-\*\*Primary Hypothesis:\*\* H2 — Behavioral Differentiation
-
-
-
-\---
+**Primary Hypothesis:** H2 — Behavioral Differentiation
 
 
 
-\## 1. Purpose
+---
+
+
+
+## 1. Purpose
 
 
 
@@ -38,15 +38,15 @@ A measurable difference between normal and controlled abnormal conditions does n
 
 
 
-\---
+---
 
 
 
-\## 2. Research Hypothesis
+## 2. Research Hypothesis
 
 
 
-\### H2 — Behavioral Differentiation
+### H2 — Behavioral Differentiation
 
 
 
@@ -54,7 +54,7 @@ Selected telemetry measurements collected during predefined controlled abnormal 
 
 
 
-\### H02 — Null Hypothesis
+### H02 — Null Hypothesis
 
 
 
@@ -62,11 +62,11 @@ Selected telemetry measurements collected during predefined controlled abnormal 
 
 
 
-\---
+---
 
 
 
-\## 3. Experimental Comparison Model
+## 3. Experimental Comparison Model
 
 
 
@@ -74,7 +74,7 @@ The M5 comparison model is:
 
 
 
-\*\*M4 NORMAL BASELINE → CONTROLLED CHANGE → OBSERVATION → COMPARISON\*\*
+**M4 NORMAL BASELINE → CONTROLLED CHANGE → OBSERVATION → COMPARISON**
 
 
 
@@ -82,9 +82,9 @@ Two experimental states are defined:
 
 
 
-\*\*State A:\*\* M4 defined normal operation  
+**State A:** M4 defined normal operation
 
-\*\*State B:\*\* M5 defined controlled abnormal activity
+**State B:** M5 defined controlled abnormal activity
 
 
 
@@ -96,11 +96,11 @@ Where a direct quantitative comparison is not supported by the available telemet
 
 
 
-\---
+---
 
 
 
-\## 4. Experimental Environment
+## 4. Experimental Environment
 
 
 
@@ -112,27 +112,27 @@ The environment contains:
 
 
 
-\- USER zone
+- USER zone
 
-\- SERVER zone
+- SERVER zone
 
-\- OBSERVABILITY zone
+- OBSERVABILITY zone
 
-\- WAN/Internet connectivity
+- WAN/Internet connectivity
 
-\- EDGE-R1
+- EDGE-R1
 
-\- CLIENT-1
+- CLIENT-1
 
-\- CLIENT-2
+- CLIENT-2
 
-\- SERVER-1
+- SERVER-1
 
-\- TELEMETRY-1
+- TELEMETRY-1
 
-\- Centralized Syslog collection
+- Centralized Syslog collection
 
-\- Packet-level observation capability
+- Packet-level observation capability
 
 
 
@@ -144,11 +144,11 @@ No topology or telemetry configuration change shall be introduced during an expe
 
 
 
-\---
+---
 
 
 
-\## 5. Controlled Variables
+## 5. Controlled Variables
 
 
 
@@ -156,29 +156,29 @@ Where technically possible, the following variables shall remain fixed or be rec
 
 
 
-\- Network topology
+- Network topology
 
-\- Device configurations
+- Device configurations
 
-\- Routing configuration
+- Routing configuration
 
-\- Zone structure
+- Zone structure
 
-\- Security-policy configuration
+- Security-policy configuration
 
-\- Telemetry-source configuration
+- Telemetry-source configuration
 
-\- Test endpoints
+- Test endpoints
 
-\- Test duration
+- Test duration
 
-\- Test procedure
+- Test procedure
 
-\- Observation window
+- Observation window
 
-\- Time synchronization
+- Time synchronization
 
-\- Background traffic conditions
+- Background traffic conditions
 
 
 
@@ -186,11 +186,11 @@ Any uncontrolled or changed variable shall be documented as an experimental limi
 
 
 
-\---
+---
 
 
 
-\## 6. Repetition Strategy
+## 6. Repetition Strategy
 
 
 
@@ -206,17 +206,17 @@ Each trial shall:
 
 
 
-1\. Begin from a known operational state.
+1. Begin from a known operational state.
 
-2\. Use the predefined procedure for that scenario.
+2. Use the predefined procedure for that scenario.
 
-3\. Retain the required evidence.
+3. Retain the required evidence.
 
-4\. Record the measured outcome.
+4. Record the measured outcome.
 
-5\. Verify relevant legitimate operations where required.
+5. Verify relevant legitimate operations where required.
 
-6\. Return the environment to the defined starting condition before the next trial where technically necessary.
+6. Return the environment to the defined starting condition before the next trial where technically necessary.
 
 
 
@@ -224,55 +224,55 @@ If five trials are not technically appropriate for a particular scenario, the re
 
 
 
-\---
+---
 
 
 
-\## 7. M5 Experimental Scenarios
+## 7. M5 Experimental Scenarios
 
 
 
-\### A01 — Elevated Connection Frequency
+### A01 — Elevated Connection Frequency
 
 
 
-\*\*Objective:\*\*  
+**Objective:**
 
 Determine whether a controlled increase in connection or request frequency produces measurable telemetry characteristics different from the corresponding normal-operation condition.
 
 
 
-\*\*Independent Variable:\*\*  
+**Independent Variable:**
 
 Connection/request frequency.
 
 
 
-\*\*Candidate Dependent Variables:\*\*
+**Candidate Dependent Variables:**
 
 
 
-\- Connection frequency
+- Connection frequency
 
-\- Traffic volume
+- Traffic volume
 
-\- Event frequency
+- Event frequency
 
-\- Packet behavior
+- Packet behavior
 
-\- Application response behavior
+- Application response behavior
 
-\- Source-attributed telemetry observations
+- Source-attributed telemetry observations
 
 
 
-\*\*Reference Condition:\*\*  
+**Reference Condition:**
 
 Relevant M4 legitimate application/network behavior.
 
 
 
-\*\*Method:\*\*  
+**Method:**
 
 Generate a predefined series of legitimate connection or application requests from an authorized test endpoint at a frequency greater than the normal reference condition.
 
@@ -282,65 +282,65 @@ The same procedure and request count/rate shall be used for each repeated trial.
 
 
 
-\*\*Evidence:\*\*
+**Evidence:**
 
 
 
-\- Trial results
+- Trial results
 
-\- Packet capture where applicable
+- Packet capture where applicable
 
-\- Centralized telemetry observations
+- Centralized telemetry observations
 
-\- Relevant timestamps
+- Relevant timestamps
 
-\- Operational-preservation observations
-
-
-
-\---
+- Operational-preservation observations
 
 
 
-\### A02 — Increased Destination or Service Diversity
+---
 
 
 
-\*\*Objective:\*\*  
+### A02 — Increased Destination or Service Diversity
+
+
+
+**Objective:**
 
 Determine whether controlled changes in destination or service-access patterns produce observable differences from the normal baseline.
 
 
 
-\*\*Independent Variable:\*\*  
+**Independent Variable:**
 
 Number or distribution of destinations/services contacted during the observation period.
 
 
 
-\*\*Candidate Dependent Variables:\*\*
+**Candidate Dependent Variables:**
 
 
 
-\- Destination diversity
+- Destination diversity
 
-\- Port/service distribution
+- Port/service distribution
 
-\- Connection frequency
+- Connection frequency
 
-\- Traffic volume
+- Traffic volume
 
-\- Event characteristics
+- Event characteristics
 
 
 
-\*\*Reference Condition:\*\*  
+**Reference Condition:**
 
 M4 normal destination/service behavior.
 
 
 
-\*\*Method:\*\*  
+**Method:**
 
 Generate a predefined sequence of connections toward multiple approved laboratory destinations or services that differs from the normal reference pattern.
 
@@ -350,65 +350,65 @@ Only services and endpoints explicitly available within the controlled RC-002 la
 
 
 
-\*\*Evidence:\*\*
+**Evidence:**
 
 
 
-\- Trial results
+- Trial results
 
-\- Packet-level observations
+- Packet-level observations
 
-\- Relevant telemetry
+- Relevant telemetry
 
-\- Destination/service records
+- Destination/service records
 
-\- Operational-preservation observations
-
-
-
-\---
+- Operational-preservation observations
 
 
 
-\### A03 — Controlled Denied-Access Activity
+---
 
 
 
-\*\*Objective:\*\*  
+### A03 — Controlled Denied-Access Activity
+
+
+
+**Objective:**
 
 Determine whether repeated policy-denied activity produces observable telemetry characteristics distinguishable from normal legitimate operation.
 
 
 
-\*\*Independent Variable:\*\*  
+**Independent Variable:**
 
 Frequency of predefined denied-access attempts.
 
 
 
-\*\*Candidate Dependent Variables:\*\*
+**Candidate Dependent Variables:**
 
 
 
-\- Denied-access frequency
+- Denied-access frequency
 
-\- Connection/event frequency
+- Connection/event frequency
 
-\- Source attribution
+- Source attribution
 
-\- Destination/service information
+- Destination/service information
 
-\- Infrastructure or security-policy events where available
+- Infrastructure or security-policy events where available
 
 
 
-\*\*Reference Condition:\*\*  
+**Reference Condition:**
 
 M4 legitimate operation without the predefined denied-access sequence.
 
 
 
-\*\*Method:\*\*  
+**Method:**
 
 From an authorized laboratory endpoint, perform a predefined set of connection attempts that are expected to be denied by an existing or explicitly defined laboratory policy.
 
@@ -418,65 +418,65 @@ The policy behavior and expected result shall be documented before execution.
 
 
 
-\*\*Evidence:\*\*
+**Evidence:**
 
 
 
-\- Denied-access results
+- Denied-access results
 
-\- Relevant packet observations
+- Relevant packet observations
 
-\- Centralized telemetry where available
+- Centralized telemetry where available
 
-\- Source and destination attribution
+- Source and destination attribution
 
-\- Operational-preservation observations
-
-
-
-\---
+- Operational-preservation observations
 
 
 
-\### A04 — Controlled Infrastructure-Event Burst
+---
 
 
 
-\*\*Objective:\*\*  
+### A04 — Controlled Infrastructure-Event Burst
+
+
+
+**Objective:**
 
 Determine whether a controlled increase in infrastructure or system-event frequency produces observable changes in centralized telemetry.
 
 
 
-\*\*Independent Variable:\*\*  
+**Independent Variable:**
 
 Frequency of predefined infrastructure/system events.
 
 
 
-\*\*Candidate Dependent Variables:\*\*
+**Candidate Dependent Variables:**
 
 
 
-\- Infrastructure-event frequency
+- Infrastructure-event frequency
 
-\- Syslog event frequency
+- Syslog event frequency
 
-\- Source attribution
+- Source attribution
 
-\- Event-type distribution
+- Event-type distribution
 
-\- Event observability
+- Event observability
 
 
 
-\*\*Reference Condition:\*\*  
+**Reference Condition:**
 
 M4 normal system activity.
 
 
 
-\*\*Method:\*\*  
+**Method:**
 
 Generate a predefined sequence of benign administrative or system events within the controlled laboratory.
 
@@ -486,27 +486,27 @@ Events shall be reproducible, authorized, and designed to avoid unnecessary disr
 
 
 
-\*\*Evidence:\*\*
+**Evidence:**
 
 
 
-\- Event timestamps
+- Event timestamps
 
-\- Source-specific centralized Syslog
+- Source-specific centralized Syslog
 
-\- Event counts/types
+- Event counts/types
 
-\- Relevant system observations
+- Relevant system observations
 
-\- Operational-preservation observations
-
-
-
-\---
+- Operational-preservation observations
 
 
 
-\## 8. Operational Preservation
+---
+
+
+
+## 8. Operational Preservation
 
 
 
@@ -518,17 +518,17 @@ Where applicable, experiments shall verify that required legitimate operations r
 
 
 
-\- Required network connectivity
+- Required network connectivity
 
-\- Routing stability
+- Routing stability
 
-\- HTTP/application availability
+- HTTP/application availability
 
-\- Internet/NAT connectivity where applicable
+- Internet/NAT connectivity where applicable
 
-\- Telemetry collection
+- Telemetry collection
 
-\- Required management or infrastructure services
+- Required management or infrastructure services
 
 
 
@@ -540,11 +540,11 @@ Any material degradation shall be recorded.
 
 
 
-\---
+---
 
 
 
-\## 9. Measurements
+## 9. Measurements
 
 
 
@@ -556,25 +556,25 @@ Candidate measurements include:
 
 
 
-\- Connection frequency
+- Connection frequency
 
-\- Destination diversity
+- Destination diversity
 
-\- Port/service distribution
+- Port/service distribution
 
-\- Denied-access frequency
+- Denied-access frequency
 
-\- Traffic volume
+- Traffic volume
 
-\- Infrastructure-event frequency
+- Infrastructure-event frequency
 
-\- Packet behavior
+- Packet behavior
 
-\- Application completion behavior
+- Application completion behavior
 
-\- Source-attributed centralized telemetry
+- Source-attributed centralized telemetry
 
-\- Event observability latency where timestamp precision permits
+- Event observability latency where timestamp precision permits
 
 
 
@@ -582,11 +582,11 @@ Measurements shall not be reported with greater precision than the experimental 
 
 
 
-\---
+---
 
 
 
-\## 10. Evidence Retention
+## 10. Evidence Retention
 
 
 
@@ -642,11 +642,11 @@ Large packet-capture artifacts shall remain subject to the repository's existing
 
 
 
-\---
+---
 
 
 
-\## 11. Comparison with M4
+## 11. Comparison with M4
 
 
 
@@ -662,25 +662,25 @@ Where appropriate, comparison may include:
 
 
 
-\- Trial counts
+- Trial counts
 
-\- Event counts
+- Event counts
 
-\- Connection frequency
+- Connection frequency
 
-\- Packet characteristics
+- Packet characteristics
 
-\- Traffic volume
+- Traffic volume
 
-\- Response/completion behavior
+- Response/completion behavior
 
-\- Destination/service diversity
+- Destination/service diversity
 
-\- Syslog event characteristics
+- Syslog event characteristics
 
-\- Source attribution
+- Source attribution
 
-\- Variability across repeated trials
+- Variability across repeated trials
 
 
 
@@ -688,11 +688,11 @@ A difference shall be described quantitatively where supported by retained measu
 
 
 
-\---
+---
 
 
 
-\## 12. H2 Evaluation Rule
+## 12. H2 Evaluation Rule
 
 
 
@@ -708,11 +708,11 @@ Possible conclusions are:
 
 
 
-\- Evidence supports measurable behavioral differentiation for the tested condition.
+- Evidence supports measurable behavioral differentiation for the tested condition.
 
-\- Evidence does not support measurable behavioral differentiation for the tested condition.
+- Evidence does not support measurable behavioral differentiation for the tested condition.
 
-\- Evidence is insufficient to evaluate behavioral differentiation for the tested condition.
+- Evidence is insufficient to evaluate behavioral differentiation for the tested condition.
 
 
 
@@ -724,11 +724,11 @@ Where the available evidence is insufficient, H2 shall be reported as inconclusi
 
 
 
-\---
+---
 
 
 
-\## 13. Interpretation Boundary
+## 13. Interpretation Boundary
 
 
 
@@ -740,15 +740,15 @@ M5 does not establish that:
 
 
 
-\- A measured deviation is malicious.
+- A measured deviation is malicious.
 
-\- A single threshold can distinguish normal from abnormal behavior.
+- A single threshold can distinguish normal from abnormal behavior.
 
-\- The environment provides automated anomaly detection.
+- The environment provides automated anomaly detection.
 
-\- The environment provides automated threat detection.
+- The environment provides automated threat detection.
 
-\- The results generalize directly to production enterprise networks.
+- The results generalize directly to production enterprise networks.
 
 
 
@@ -756,11 +756,11 @@ M4 demonstrated that legitimate behavior itself can exhibit substantial variabil
 
 
 
-\---
+---
 
 
 
-\## 14. Confounding Factors and Limitations
+## 14. Confounding Factors and Limitations
 
 
 
@@ -768,27 +768,27 @@ Potential confounding factors include:
 
 
 
-\- Background network traffic
+- Background network traffic
 
-\- Clock synchronization differences
+- Clock synchronization differences
 
-\- Telemetry buffering
+- Telemetry buffering
 
-\- Collection or processing delays
+- Collection or processing delays
 
-\- Packet loss
+- Packet loss
 
-\- Device resource constraints
+- Device resource constraints
 
-\- GNS3/emulator limitations
+- GNS3/emulator limitations
 
-\- Host operating-system behavior
+- Host operating-system behavior
 
-\- Differences between repeated trials
+- Differences between repeated trials
 
-\- Telemetry-source configuration changes
+- Telemetry-source configuration changes
 
-\- External-path variability
+- External-path variability
 
 
 
@@ -796,11 +796,11 @@ Particular care shall be taken when interpreting measurements involving the exte
 
 
 
-\---
+---
 
 
 
-\## 15. Pre-Experiment Acceptance Criteria
+## 15. Pre-Experiment Acceptance Criteria
 
 
 
@@ -808,29 +808,29 @@ M5 experimentation may begin only after confirming:
 
 
 
-\- M4 baseline evidence is retained.
+- M4 baseline evidence is retained.
 
-\- The RC-002 topology is operational.
+- The RC-002 topology is operational.
 
-\- Required routing is functional.
+- Required routing is functional.
 
-\- TELEMETRY-1 is receiving expected source-attributed telemetry.
+- TELEMETRY-1 is receiving expected source-attributed telemetry.
 
-\- Required legitimate application/network services are functional.
+- Required legitimate application/network services are functional.
 
-\- Experimental scenario procedures are defined before execution.
+- Experimental scenario procedures are defined before execution.
 
-\- Required evidence locations exist.
+- Required evidence locations exist.
 
-\- No unintended configuration change has invalidated the M4 reference condition.
-
-
-
-\---
+- No unintended configuration change has invalidated the M4 reference condition.
 
 
 
-\## 16. Milestone Completion Criteria
+---
+
+
+
+## 16. Milestone Completion Criteria
 
 
 
@@ -838,31 +838,31 @@ M5 will be considered complete when:
 
 
 
-1\. The predefined controlled scenarios have been executed.
+1. The predefined controlled scenarios have been executed.
 
-2\. Required repetitions have been completed or deviations justified.
+2. Required repetitions have been completed or deviations justified.
 
-3\. Raw evidence has been retained.
+3. Raw evidence has been retained.
 
-4\. Derived measurements have been documented.
+4. Derived measurements have been documented.
 
-5\. M5 observations have been compared with the relevant M4 baseline.
+5. M5 observations have been compared with the relevant M4 baseline.
 
-6\. Operational impact has been documented.
+6. Operational impact has been documented.
 
-7\. Confounding factors and limitations have been recorded.
+7. Confounding factors and limitations have been recorded.
 
-8\. H2 has been evaluated only to the extent supported by retained evidence.
+8. H2 has been evaluated only to the extent supported by retained evidence.
 
-9\. A formal M5 milestone verification document has been produced.
-
-
-
-\---
+9. A formal M5 milestone verification document has been produced.
 
 
 
-\## 17. Research Integrity Rule
+---
+
+
+
+## 17. Research Integrity Rule
 
 
 
@@ -882,15 +882,15 @@ Experimental parameters shall not be retrospectively changed without documenting
 
 
 
-\---
+---
 
 
 
-\## 18. Current Status
+## 18. Current Status
 
 
 
-\*\*M5 protocol defined prior to controlled abnormal-behavior experimentation.\*\*
+**M5 protocol defined prior to controlled abnormal-behavior experimentation.**
 
 
 
@@ -898,11 +898,11 @@ Next stage: validate the pre-experiment environment and prepare A01 — Elevated
 
 
 
-\---
+---
 
 
 
-\*\*Project Aegis\*\*  
+**Project Aegis**
 
-\*Securing Tomorrow's Digital Infrastructure Through Research\*
+*Securing Tomorrow's Digital Infrastructure Through Research*
 
