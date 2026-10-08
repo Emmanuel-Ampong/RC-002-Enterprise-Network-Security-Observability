@@ -1,28 +1,28 @@
-\# RC-002 M5 - A01 Results
+# RC-002 M5 - A01 Results
 
 
 
-\## Elevated Connection Frequency
+## Elevated Connection Frequency
 
 
 
-\*\*Project:\*\* Project Aegis
+**Project:** Project Aegis
 
-\*\*Research Cycle:\*\* RC-002
+**Research Cycle:** RC-002
 
-\*\*Milestone:\*\* M5 - Controlled Abnormal Behavior
+**Milestone:** M5 - Controlled Abnormal Behavior
 
-\*\*Scenario:\*\* A01 - Elevated Connection Frequency
+**Scenario:** A01 - Elevated Connection Frequency
 
-\*\*Status:\*\* Five controlled trials completed
-
-
-
-\---
+**Status:** Five controlled trials completed
 
 
 
-\## 1. Objective
+---
+
+
+
+## 1. Objective
 
 
 
@@ -34,11 +34,11 @@ The experiment manipulated request frequency while preserving the authorized sou
 
 
 
-\---
+---
 
 
 
-\## 2. Experimental Path
+## 2. Experimental Path
 
 
 
@@ -74,11 +74,11 @@ Five trials were executed.
 
 
 
-\---
+---
 
 
 
-\## 3. Trial Results
+## 3. Trial Results
 
 
 
@@ -98,11 +98,11 @@ Five trials were executed.
 
 
 
-\---
+---
 
 
 
-\## 4. Aggregate Results
+## 4. Aggregate Results
 
 
 
@@ -110,31 +110,31 @@ Across the five controlled trials:
 
 
 
-\- Total requests attempted: 100.
+- Total requests attempted: 100.
 
-\- Successful HTTP 200 responses: 100.
+- Successful HTTP 200 responses: 100.
 
-\- Failed requests: 0.
+- Failed requests: 0.
 
-\- Application success rate: 100%.
+- Application success rate: 100%.
 
-\- Total TCP conversations: 100.
+- Total TCP conversations: 100.
 
-\- Total displayed HTTP/TCP packets: 1,000.
+- Total displayed HTTP/TCP packets: 1,000.
 
-\- Total displayed bytes: 132,800.
+- Total displayed bytes: 132,800.
 
-\- Packets per HTTP transaction: 10.
+- Packets per HTTP transaction: 10.
 
-\- Mean filtered traffic span: 6.164 seconds.
+- Mean filtered traffic span: 6.164 seconds.
 
-\- Minimum filtered traffic span: 6.090 seconds.
+- Minimum filtered traffic span: 6.090 seconds.
 
-\- Maximum filtered traffic span: 6.232 seconds.
+- Maximum filtered traffic span: 6.232 seconds.
 
-\- Observed traffic-span range: 0.142 seconds.
+- Observed traffic-span range: 0.142 seconds.
 
-\- No packet-capture drops were reported in the retained Wireshark statistics.
+- No packet-capture drops were reported in the retained Wireshark statistics.
 
 
 
@@ -142,11 +142,11 @@ The five trials therefore produced highly consistent packet and application beha
 
 
 
-\---
+---
 
 
 
-\## 5. Comparison with M4 N02
+## 5. Comparison with M4 N02
 
 
 
@@ -158,17 +158,17 @@ M4 N02 recorded:
 
 
 
-\- One controlled HTTP transaction per trial.
+- One controlled HTTP transaction per trial.
 
-\- HTTP 200 in all five baseline trials.
+- HTTP 200 in all five baseline trials.
 
-\- 10 TCP packets per trial.
+- 10 TCP packets per trial.
 
-\- 0 kernel packet-capture drops.
+- 0 kernel packet-capture drops.
 
-\- Mean completion time of 0.0097632 seconds.
+- Mean completion time of 0.0097632 seconds.
 
-\- Observed completion-time range of 0.007903-0.011616 seconds.
+- Observed completion-time range of 0.007903-0.011616 seconds.
 
 
 
@@ -180,11 +180,11 @@ Each A01 trial generated:
 
 
 
-\- 20 HTTP requests.
+- 20 HTTP requests.
 
-\- 20 TCP conversations.
+- 20 TCP conversations.
 
-\- 200 displayed HTTP/TCP packets.
+- 200 displayed HTTP/TCP packets.
 
 
 
@@ -196,11 +196,11 @@ This difference was reproducible across all five A01 trials.
 
 
 
-\---
+---
 
 
 
-\## 6. Behavioral Interpretation
+## 6. Behavioral Interpretation
 
 
 
@@ -212,13 +212,13 @@ The principal measurable differences were:
 
 
 
-\- Increased request frequency.
+- Increased request frequency.
 
-\- Increased connection frequency.
+- Increased connection frequency.
 
-\- Increased packet count.
+- Increased packet count.
 
-\- Increased traffic volume over the controlled trial window.
+- Increased traffic volume over the controlled trial window.
 
 
 
@@ -234,11 +234,11 @@ It is not, by itself, evidence of malicious activity, automated anomaly detectio
 
 
 
-\---
+---
 
 
 
-\## 7. Operational Preservation
+## 7. Operational Preservation
 
 
 
@@ -266,11 +266,11 @@ It does not establish zero performance impact under other workloads or operating
 
 
 
-\---
+---
 
 
 
-\## 8. H2 Relevance
+## 8. H2 Relevance
 
 
 
@@ -290,11 +290,11 @@ No overall conclusion regarding H2 is made at this stage because the remaining p
 
 
 
-\---
+---
 
 
 
-\## 9. Measurement Limitation
+## 9. Measurement Limitation
 
 
 
@@ -314,11 +314,11 @@ This limitation does not affect the recorded request counts, HTTP response outco
 
 
 
-\---
+---
 
 
 
-\## 10. Conclusion
+## 10. Conclusion
 
 
 
