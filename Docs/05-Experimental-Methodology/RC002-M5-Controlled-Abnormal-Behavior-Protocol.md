@@ -8,7 +8,7 @@
 
 **Milestone:** M5 — Controlled Abnormal-Behavior Experiments
 
-**Protocol Status:** PRE-EXPERIMENT
+**Protocol Status:** ACTIVE — A04 PREPARATION
 
 **Primary Hypothesis:** H2 — Behavioral Differentiation
 
@@ -888,13 +888,16 @@ Experimental parameters shall not be retrospectively changed without documenting
 
 ## 18. Current Status
 
+**Protocol history:** The M5 experimental protocol was defined before controlled abnormal-behavior experimentation began.
 
+**Current execution status:** IN PROGRESS
 
-**M5 protocol defined prior to controlled abnormal-behavior experimentation.**
+- A01 — Elevated Connection Frequency: COMPLETE
+- A02 — Increased Destination or Service Diversity: COMPLETE
+- A03 — Controlled Denied-Access Activity: COMPLETE
+- A04 — Controlled Infrastructure-Event Burst: NOT STARTED
 
-
-
-Next stage: validate the pre-experiment environment and prepare A01 — Elevated Connection Frequency.
+**Next stage:** Prepare and validate the A04 experimental protocol before executing controlled trials.
 
 
 
