@@ -894,7 +894,7 @@ Experimental parameters shall not be retrospectively changed without documenting
 
 **Results documentation status:** COMPLETE — ALL FOUR SCENARIOS
 
-**Milestone verification status:** PENDING
+**Milestone verification status:** COMPLETE — PASS WITH DOCUMENTED LIMITATIONS
 
 - A01 — Elevated Connection Frequency: COMPLETE
 - A02 — Increased Destination or Service Diversity: COMPLETE
@@ -905,7 +905,9 @@ All four experimental scenarios have completed their recorded trials, and their 
 
 The findings include successful observations, experimental exceptions, operational-preservation measurements, and documented limitations. Claims concerning H2 and H3 remain restricted to the evidence supported by each scenario.
 
-**Next stage:** Consolidate the A01–A04 findings, prepare the formal M5 milestone verification document, evaluate the nine completion criteria in Section 16, and close M5 only after verification.
+**Verification outcome:** The nine M5 completion criteria have been evaluated in Docs/06-Verification/RC002-M5-Controlled-Abnormal-Behavior.md. M5 is formally closed with documented limitations. The verification report preserves the A02–A04 evidence qualifications and restricts H2 and H3 conclusions to the tested scope.
+
+**Next stage:** Prepare the consolidated A01–A04 results analysis, identify cross-scenario findings and research implications, and determine the requirements for the next RC-002 milestone.
 
 **Status update date:** 2026-10-11
 
