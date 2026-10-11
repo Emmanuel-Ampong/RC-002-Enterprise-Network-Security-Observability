@@ -888,18 +888,26 @@ Experimental parameters shall not be retrospectively changed without documenting
 
 ## 18. Current Status
 
-**Protocol history:** The M5 experimental protocol was defined before controlled abnormal-behavior experimentation began.
+**Protocol history:** The M5 experimental methodology was established before controlled abnormal-behavior experimentation began. The separately frozen A04 scenario protocol was incomplete; its procedural limitations are disclosed in the A04 results report.
 
-**Current execution status:** IN PROGRESS
+**Execution status:** COMPLETE — ALL FOUR SCENARIOS
+
+**Results documentation status:** COMPLETE — ALL FOUR SCENARIOS
+
+**Milestone verification status:** PENDING
 
 - A01 — Elevated Connection Frequency: COMPLETE
 - A02 — Increased Destination or Service Diversity: COMPLETE
 - A03 — Controlled Denied-Access Activity: COMPLETE
-- A04 — Controlled Infrastructure-Event Burst: NOT STARTED
+- A04 — Controlled Infrastructure-Event Burst: COMPLETE
 
-**Next stage:** Prepare and validate the A04 experimental protocol before executing controlled trials.
+All four experimental scenarios have completed their recorded trials, and their consolidated results reports have been retained under `results/M5-Controlled-Abnormal-Behavior/`.
 
+The findings include successful observations, experimental exceptions, operational-preservation measurements, and documented limitations. Claims concerning H2 and H3 remain restricted to the evidence supported by each scenario.
 
+**Next stage:** Consolidate the A01–A04 findings, prepare the formal M5 milestone verification document, evaluate the nine completion criteria in Section 16, and close M5 only after verification.
+
+**Status update date:** 2026-10-11
 
 ---
 
