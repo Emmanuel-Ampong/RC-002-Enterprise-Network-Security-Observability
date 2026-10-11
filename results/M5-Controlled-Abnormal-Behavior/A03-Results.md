@@ -115,4 +115,143 @@ The 25 retransmission observations are distinct from the 25 initial SYN packets.
 
 ## 5. Comparison with M4 Normal Operation
 
-A03 was conducted within the same RC-002
+A03 was conducted within the RC-002 experimental environment used for the M4 normal-operation baseline.
+
+The relevant M4 references are:
+
+- N01 — ICMP Interzone
+- N02 — HTTP Application
+- N03 — Internet ICMP
+- N04 — System Activity
+
+### Internal connectivity comparison
+
+The M4 N01 baseline recorded five successful internal ICMP trials from SERVER-1 (`192.168.20.10`) to TELEMETRY-1 (`192.168.30.10`), with zero packet loss in each trial.
+
+All five A03 trials also passed the recorded internal ICMP connectivity checks.
+
+This supports preservation of the tested internal connectivity function during the controlled TCP/22 denial condition.
+
+### HTTP application comparison
+
+The M4 N02 baseline recorded five successful HTTP requests to SERVER-1 on TCP/80, each returning HTTP 200.
+
+All five A03 trials likewise recorded HTTP 200 during their operational checks.
+
+These observations support continued availability of the tested HTTP application under the A03 experimental condition.
+
+The checks do not establish identical response times or uninterrupted availability between measurements.
+
+### External connectivity comparison
+
+The M4 N03 baseline recorded five successful Internet ICMP trials to `8.8.8.8`, with zero packet loss. Baseline average RTT values ranged from 55.676 ms to 277.110 ms, and the highest recorded maximum RTT was 578.026 ms.
+
+During A03-T01, the first external ICMP check returned one of three replies, representing approximately 66% packet loss. A repeat check returned three of three replies, with zero packet loss.
+
+During A03-T04, the external ICMP average RTT was 152.122 ms and the maximum RTT was 262.432 ms. These measurements fall within the observed N03 RTT ranges.
+
+The cause of the T01 packet-loss exception remains undetermined. The available evidence does not establish that the controlled firewall rule caused the loss.
+
+### TCP/22 denial comparison
+
+The M4 reference datasets do not provide a dedicated quantitative baseline for TCP/22 firewall-denial activity.
+
+A03 nevertheless recorded the controlled experimental behavior directly: 25 connection attempts timed out during enforcement, while firewall counters and packet captures showed corresponding dropped packets, initial SYNs, and retransmissions.
+
+The experiment therefore establishes repeatable controlled denial behavior, but not a quantified increase in denied TCP/22 attempts relative to a measured M4 denial baseline.
+
+---
+
+## 6. Operational Preservation
+
+The A03 experimental condition selectively denied the tested TCP/22 connections.
+
+Across all five trials:
+
+- Internal ICMP connectivity checks passed.
+- TCP/514 reachability checks passed.
+- UDP/514 collector receipt was confirmed.
+- HTTP checks returned HTTP 200.
+- External ICMP connectivity was ultimately confirmed, including the successful repeat check in T01.
+
+A03-T01 was classified as `PASS_WITH_EXCEPTION` because the initial external ICMP test recorded approximately 66% packet loss.
+
+A03-T04 recorded elevated external ICMP latency relative to some observations, but its recorded average and maximum RTT values were within the ranges present in the M4 N03 baseline.
+
+After A03-T05, the experimental firewall DROP rule was removed and TCP/22 connectivity was confirmed restored.
+
+The results support operational preservation of the principal tested functions within the scope of the recorded checks. They do not establish continuous availability, zero performance impact, or the absence of transient network errors.
+
+---
+
+## 7. H2 Relevance
+
+A03 provides evidence relevant to RC-002 Hypothesis H2.
+
+The controlled TCP/22 denial condition produced repeatable and observable network behavior:
+
+- 25 connection attempts timed out across five trials.
+- Firewall counters recorded 50 dropped packets and 3,000 dropped bytes.
+- Packet observations recorded 25 initial TCP SYNs and 25 SYN retransmissions.
+- No successful TCP/22 connection was recorded during enforcement.
+- TCP/22 connectivity was restored after removal of the experimental rule.
+
+The firewall DROP packet count includes retransmissions and must not be interpreted as 50 distinct connection attempts.
+
+These observations demonstrate that the selected packet and firewall telemetry can characterize a predefined denied-access condition.
+
+However, the M4 datasets do not establish a directly comparable normal-operation TCP/22 denial rate. A03 therefore supports the observability of the controlled behavior without independently establishing a quantified baseline-relative increase in denial activity.
+
+The observed behavior is not, by itself, evidence of malicious activity or automated threat detection.
+
+---
+
+## 8. Measurement Limitations and Exceptions
+
+**T01 external ICMP exception:** The first external ICMP test recorded approximately 66% packet loss. A repeat test recorded zero packet loss. The root cause was not established.
+
+**T04 external latency:** Average RTT was 152.122 ms, with a maximum of 262.432 ms. The measurements do not independently establish experiment-induced degradation.
+
+**Firewall counter interpretation:** The 50 observed DROP packets comprise 25 initial SYN packets and 25 retransmissions, rather than 50 distinct connection attempts.
+
+**Baseline limitation:** M4 does not contain a dedicated quantitative reference for TCP/22 firewall-denial activity.
+
+**Operational observation scope:** Successful connectivity and application checks establish the tested functions' status at the recorded observation points, not uninterrupted operation throughout every trial.
+
+**Causal attribution:** The available evidence does not establish the cause of the T01 external packet-loss exception.
+
+These limitations are retained to avoid overstating the findings.
+
+---
+
+## 9. Evidence and Reproducibility
+
+The principal derived dataset is:
+
+`datasets/M5-Controlled-Abnormal-Behavior/A03-Controlled-Denied-Access/A03-Trial-Summary.csv`
+
+The dataset contains five trial records covering connection attempts, timeouts, firewall counters, TCP SYN observations, connectivity checks, collector receipt, HTTP responses, operational classifications, and trial-specific notes.
+
+The experimental results should be interpreted alongside the retained trial evidence and the M4 normal-operation datasets.
+
+This section and Sections 5–8 were completed after identification of the original report's truncation. The additions document analysis of existing evidence; they do not represent new experimental trials or retrospective changes to trial measurements.
+
+---
+
+## 10. Conclusion
+
+A03 completed five controlled denied-access trials.
+
+All 25 TCP/22 connection attempts timed out during enforcement. Firewall counters and packet observations consistently recorded the controlled denial behavior, including SYN retransmissions.
+
+The principal tested network functions remained available at the recorded operational checkpoints, subject to the T01 external ICMP exception and the documented measurement limitations.
+
+A03 provides reproducible evidence that selected telemetry can expose controlled denied-access behavior. It does not independently quantify the increase in denial activity relative to an M4 TCP/22 baseline or demonstrate automated attack detection.
+
+The experimental DROP rule was removed after the final trial, and TCP/22 connectivity was confirmed restored.
+
+**Scenario execution status:** COMPLETE
+
+**Results documentation status:** COMPLETE — repaired following identification of the originally truncated report.
+
+**Milestone status:** Pending consolidated M5 verification.
