@@ -429,6 +429,9 @@ Clock synchronization limitations also restricted timing analysis.
 The experiments do not establish automated anomaly detection
 or comprehensive coverage of abnormal network behavior.
 
+**WP01-F05 Capture-Quality Qualification:**
+Independent inspection of all five M4 N02 baseline PCAP files and all five M5 A01 PCAPNG files found zero retained capture-interface statistics entries in each file. Consequently, historical claims of zero kernel packet-capture drops cannot be independently verified from the retained captures. This limitation does not invalidate the observed HTTP transactions or establish that capture drops occurred. Future trials require retained capture-tool drop counters, relevant interface statistics, and supporting measurement logs. See `Docs/14-M6-Research-Execution/RC002-M6-WP01-Evidence-Audit.md`, Section 4.2.2.
+
 **Outstanding Verification Work:**
 - Strengthen comparable normal-versus-abnormal baselines.
 - Investigate unexplained telemetry gaps.

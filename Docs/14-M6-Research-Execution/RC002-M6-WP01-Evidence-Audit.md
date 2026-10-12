@@ -257,7 +257,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | WP01-F02 | M3 screenshot contents had not all been independently inspected | MEDIUM | Independently inspect all six M3 screenshots, assess whether each supports its stated claim, and document evidentiary limitations | CLOSED WITH LIMITATIONS |
 | WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | OPEN |
 | WP01-F04 | Source and collector timestamps show an unresolved discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | OPEN |
-| WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims and define verifiable capture-quality measurements | OPEN |
+| WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims, document the historical measurement limitation, and define verifiable capture-quality measurements for future trials | CLOSED WITH LIMITATIONS |
 | WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the observation gap or formally document it as unresolved | OPEN |
 | WP01-F07 | A02 trial records lack quantitative packet, byte, and duration metrics | MEDIUM | Define and collect measurable traffic-diversity observations | OPEN |
 | WP01-F08 | A03 lacks a complete normal-versus-denied comparator | HIGH | Establish controlled comparator evidence and verify operational recovery | OPEN |
@@ -283,6 +283,29 @@ Limitations: The screenshots do not independently authenticate sender identity, 
 
 **Finding disposition:** CLOSED WITH LIMITATIONS. All six screenshots were inspected and their supported claims assessed; the remaining research dependencies are not considered resolved by this inspection.
 
+### 4.2.2 WP01-F05 — Capture-Drop Verification and Measurement Limitations
+
+**Scope:** Five M4 N02 HTTP baseline PCAP files and five M5 A01 HTTP connection-frequency PCAPNG files were independently inspected using Wireshark `capinfos`.
+
+**Verified observations:**
+
+- All five M4 N02 baseline captures contain 10 packets and 1,328 captured data bytes per trial, for 50 packets across the baseline trials.
+- All five M4 N02 captures report one capture interface and zero interface statistics entries.
+- All five M5 A01 captures likewise report zero interface statistics entries. The previously verified A01 HTTP packet and transaction counts remain supported by packet-level inspection.
+- The absence of interface statistics does not establish that packet drops occurred, nor does it independently establish that zero drops occurred.
+
+**Claim qualification:** The original A01 results report states that no capture drops were reported in retained Wireshark statistics and records zero kernel capture drops for M4 N02. These statements are retained as historical reported observations, not independently verified zero-drop measurements. The saved captures do not provide sufficient capture-drop metadata to substantiate them. No packet-loss rate or capture completeness percentage is inferred.
+
+**Required measurement procedure for future controlled trials:**
+
+1. Record the capture tool, version, capture interface, filter, start and stop times, and expected traffic-generation count.
+2. Preserve contemporaneous capture-tool output reporting packets captured, packets received by the capture filter where available, and packets dropped by the kernel where available. Explicitly record when a counter is unavailable.
+3. Record relevant interface or operating-system drop/error counters before and after each trial, distinguishing these from capture-tool drops and intentional firewall DROP counters.
+4. Preserve capture files, measurement logs, trial identifiers, timestamps, and SHA-256 fingerprints together.
+5. Cross-check application transaction counts against observed packet traces and independently retained sender/receiver records where available. Do not equate observed application success with proof of zero capture loss.
+6. Verify measurement availability and clock consistency before using drop counts, rates, or timing metrics in research conclusions.
+
+**Finding disposition:** CLOSED WITH LIMITATIONS. The historical capture-drop claims have been qualified in the audit report and RTM, and a measurement procedure has been defined for future trials. Actual capture-drop counts for the completed trials remain unverified because the retained captures contain no capture-interface statistics entries. This disposition closes the documentation corrective action; it does not establish historical capture completeness or prove zero packet drops.
 
 ### 4.3 Closed Finding — WP01-F01
 
@@ -350,15 +373,17 @@ These observations support continued research execution but do not establish com
 | Classification | Number of Findings |
 |---|---:|
 | CLOSED | 1 |
-| CLOSED WITH LIMITATIONS | 1 |
-| OPEN | 10 |
+| CLOSED WITH LIMITATIONS | 2 |
+| OPEN | 9 |
 | TOTAL | 12 |
 
 WP01-F01 is closed following recovery, SHA-256 verification, Git preservation, and successful publication of the five A01 packet captures.
 
-WP01-F02 is closed with limitations following independent visual inspection of all six M3 screenshots. The screenshots support their respective operational and telemetry observations, subject to documented limitations concerning sender attribution, reboot verification, clock synchronization, and continuous service availability.
+WP01-F02 is closed with limitations following independent visual inspection of all six M3 screenshots. The screenshots support their respective operational and telemetry observations, subject to documented evidentiary limitations.
 
-The remaining ten open findings require additional verification, controlled experimentation, documentation, or formal acceptance of limitations. Closing WP01-F02 does not resolve those separate research dependencies.
+WP01-F05 is closed with limitations after the capture-drop claims were qualified in the audit report and RTM, and a capture-quality measurement procedure was documented for future trials. Historical capture-drop counts remain unverified because the ten inspected M4 N02 and M5 A01 captures contain no retained capture-interface statistics entries.
+
+The remaining nine findings require additional verification, controlled experimentation, documentation, or formal acceptance of limitations. Closing these findings with limitations does not resolve their underlying historical evidence gaps.
 
 ### 5.3 Research Implications
 
