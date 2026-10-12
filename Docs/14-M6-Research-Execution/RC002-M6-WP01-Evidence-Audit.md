@@ -254,7 +254,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | Finding ID | Finding | Priority | Required Corrective Action | Status |
 |---|---|---|---|---|
 | WP01-F01 | A01 captures were stored under the M4 N03 directory | MEDIUM | Copy captures into M5 A01, verify SHA-256 fingerprints, and preserve them in Git | CLOSED |
-| WP01-F02 | M3 screenshot contents have not all been independently inspected | MEDIUM | Inspect selected screenshots and document whether they support their stated claims | OPEN |
+| WP01-F02 | M3 screenshot contents had not all been independently inspected | MEDIUM | Independently inspect all six M3 screenshots, assess whether each supports its stated claim, and document evidentiary limitations | CLOSED WITH LIMITATIONS |
 | WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | OPEN |
 | WP01-F04 | Source and collector timestamps show an unresolved discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | OPEN |
 | WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims and define verifiable capture-quality measurements | OPEN |
@@ -265,6 +265,24 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | WP01-F10 | A04 event-delivery latency cannot be established without verified clock synchronization | HIGH | Validate time synchronization before making quantitative latency claims | OPEN |
 | WP01-F11 | Normal-versus-abnormal detection thresholds have not been validated | HIGH | Define and test measurable differentiation criteria without assuming malicious intent | OPEN |
 | WP01-F12 | Telemetry security and access protections remain incompletely verified | HIGH | Conduct authorized configuration and access-control verification | OPEN |
+
+### 4.2.1 WP01-F02 — M3 Screenshot Inspection Results
+
+All six retained M3 screenshots were independently visually inspected during WP-01.
+
+| Screenshot | Verified observation | Assessment |
+|---|---|---|
+| M3-01 | TELEMETRY-1 rsyslog service active and listening on TCP/UDP port 514 | PASS |
+| M3-02 | SERVER-1 routine and controlled Syslog messages visible in its collector log | PASS |
+| M3-03 | EDGE-R1 routine and controlled messages visible in the collector log | PASS WITH LIMITATION |
+| M3-04 | Separate SERVER-1 and EDGE-R1 source-specific log records visible | PASS WITH LIMITATION |
+| M3-05 | Post-reboot-labelled verification messages present for both sources | PASS WITH LIMITATION |
+| M3-06 | Internal ICMP, external ICMP, and HTTP connectivity tests successful | PASS |
+
+Limitations: The screenshots do not independently authenticate sender identity, establish synchronized clocks, prove actual reboot execution or uninterrupted telemetry continuity, or demonstrate sustained network availability. EDGE-R1 messages display `_gateway` rather than the explicit source IP in the log entries. These limitations remain relevant to subsequent M6 work packages.
+
+**Finding disposition:** CLOSED WITH LIMITATIONS. All six screenshots were inspected and their supported claims assessed; the remaining research dependencies are not considered resolved by this inspection.
+
 
 ### 4.3 Closed Finding — WP01-F01
 
@@ -332,12 +350,15 @@ These observations support continued research execution but do not establish com
 | Classification | Number of Findings |
 |---|---:|
 | CLOSED | 1 |
-| OPEN | 11 |
+| CLOSED WITH LIMITATIONS | 1 |
+| OPEN | 10 |
 | TOTAL | 12 |
 
-The closed finding concerns A01 packet-capture recovery and preservation.
+WP01-F01 is closed following recovery, SHA-256 verification, Git preservation, and successful publication of the five A01 packet captures.
 
-The remaining findings require additional verification, controlled experimentation, documentation, or formal acceptance of limitations.
+WP01-F02 is closed with limitations following independent visual inspection of all six M3 screenshots. The screenshots support their respective operational and telemetry observations, subject to documented limitations concerning sender attribution, reboot verification, clock synchronization, and continuous service availability.
+
+The remaining ten open findings require additional verification, controlled experimentation, documentation, or formal acceptance of limitations. Closing WP01-F02 does not resolve those separate research dependencies.
 
 ### 5.3 Research Implications
 
