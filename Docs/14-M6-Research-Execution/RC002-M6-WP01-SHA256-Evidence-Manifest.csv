@@ -1,0 +1,16 @@
+Evidence_ID,Milestone,Relative_Path,File_Size_Bytes,SHA256,Verification_Date,Verification_Status
+M5-A01-T1,M5,datasets/M5-Controlled-Abnormal-Behavior/A01-Connection-Frequency/A01-T1.pcapng,35988,19339bf00ad8c227c36ba796528b9cf44fb2202a3107c2ffcae03b60403a2f9b,2026-10-12,PASS
+M5-A01-T2,M5,datasets/M5-Controlled-Abnormal-Behavior/A01-Connection-Frequency/A01-T2.pcapng,33904,1fb9e09bc134d974caa77720e71966ec3f524af57f1f84fa6f8fc3851ec3915d,2026-10-12,PASS
+M5-A01-T3,M5,datasets/M5-Controlled-Abnormal-Behavior/A01-Connection-Frequency/A01-T3.pcapng,33904,f711f85ae9c8da6f342b99c778dccbfb33b60a10f5d67bb58287f30213561909,2026-10-12,PASS
+M5-A01-T4,M5,datasets/M5-Controlled-Abnormal-Behavior/A01-Connection-Frequency/A01-T4.pcapng,33904,6c7be66976aaa1c06c030fb901fd53c2ea708515af89fe86402ced241ea562ea,2026-10-12,PASS
+M5-A01-T5,M5,datasets/M5-Controlled-Abnormal-Behavior/A01-Connection-Frequency/A01-T5.pcapng,33904,9dfeb7cff780b5166cbe5504bc7cd9b70abeeb982108edf8f2d4caf8d489577a,2026-10-12,PASS
+M3-02,M3,Images/M3-Evidence/M3-02-SERVER1-Centralized-Telemetry.png,29762,f923921eb7106e32d51f32eeba226f70e4c167a0735a7f275a6d6cc1147f2f8e,2026-10-12,PASS
+M3-03,M3,Images/M3-Evidence/M3-03-EDGER1-Centralized-Telemetry.png,24588,1ad1a79cbab3572ee68c995c756d2d98f67ccfd5c8fc45acb7948ee967e2ea9b,2026-10-12,PASS
+M3-04,M3,Images/M3-Evidence/M3-04-Multi-Source-Telemetry-Attribution.png,16535,e04722b761b45a44ff69b2b9b9004ac43e2580a818c836d62896f4937add3f76,2026-10-12,PASS
+M3-05,M3,Images/M3-Evidence/M3-05-Post-Reboot-Telemetry-Persistence.png,48796,10fe57c0291ef43d615edf338b7fe26d9afe8ce638fbc59da3843d448a4c38e2,2026-10-12,PASS
+M3-01,M3,Images/M3-Evidence/M3-01-Central-Syslog-Collector-Listening.png,58389,3bda8fde09e2f1c24ecd588df76da0be97cfa68ceed8ea522c9de8e78cf71ff7,2026-10-12,PASS
+M3-06,M3,Images/M3-Evidence/M3-06-Network-Operation-Preserved.png,51409,bf43508d63609609b6ed4abfbb6bac0c40391388db2c81f8790b14a88b35e56a,2026-10-12,PASS
+M5-A01-RESULTS,M5,results/M5-Controlled-Abnormal-Behavior/A01-Results.md,6248,a5d484ad4d0379c4613c7ad98c0459820ef7a722241c31651f389b914249f48b,2026-10-12,PASS
+M5-A02-RESULTS,M5,results/M5-Controlled-Abnormal-Behavior/A02-Results.md,10244,d7e47a004ba77ad65ed35864be1c94121d9c0d724cfe1fe735a929af1e8ac1f6,2026-10-12,PASS
+M5-A03-RESULTS,M5,results/M5-Controlled-Abnormal-Behavior/A03-Results.md,11489,955e13aef00d563f3ab1224fa994e250e177c1219c5998e2397657dc8565984d,2026-10-12,PASS
+M5-A04-RESULTS,M5,results/M5-Controlled-Abnormal-Behavior/A04-Results.md,13630,1abfd472f87c659b889d74809d2181e332da366d3ec303c4054b4521f7ff8b72,2026-10-12,PASS
