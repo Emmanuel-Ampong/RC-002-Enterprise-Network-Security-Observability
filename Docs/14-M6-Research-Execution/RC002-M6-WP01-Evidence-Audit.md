@@ -256,7 +256,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | WP01-F01 | A01 captures were stored under the M4 N03 directory | MEDIUM | Copy captures into M5 A01, verify SHA-256 fingerprints, and preserve them in Git | CLOSED |
 | WP01-F02 | M3 screenshot contents had not all been independently inspected | MEDIUM | Independently inspect all six M3 screenshots, assess whether each supports its stated claim, and document evidentiary limitations | CLOSED WITH LIMITATIONS |
 | WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | OPEN |
-| WP01-F04 | Source and collector timestamps show an unresolved discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | OPEN |
+| WP01-F04 | Source and collector timestamps showed a substantial discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | CLOSED WITH LIMITATIONS |
 | WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims, document the historical measurement limitation, and define verifiable capture-quality measurements for future trials | CLOSED WITH LIMITATIONS |
 | WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the observation gap or formally document it as unresolved | OPEN |
 | WP01-F07 | A02 trial records lack quantitative packet, byte, and duration metrics | MEDIUM | Define and collect measurable traffic-diversity observations | OPEN |
@@ -306,6 +306,27 @@ Limitations: The screenshots do not independently authenticate sender identity, 
 6. Verify measurement availability and clock consistency before using drop counts, rates, or timing metrics in research conclusions.
 
 **Finding disposition:** CLOSED WITH LIMITATIONS. The historical capture-drop claims have been qualified in the audit report and RTM, and a measurement procedure has been defined for future trials. Actual capture-drop counts for the completed trials remain unverified because the retained captures contain no capture-interface statistics entries. This disposition closes the documentation corrective action; it does not establish historical capture completeness or prove zero packet drops.
+
+
+### 4.2.3 WP01-F04 — Timestamp Discrepancy Remediation and Verification
+
+**Scope:** Investigation of source-versus-collector timestamp discrepancies affecting EDGE-R1 and TELEMETRY-1.
+
+**Verified observations:**
+
+- EDGE-R1 initially exhibited an NTP-reported clock offset of approximately 21,372 seconds.
+- TELEMETRY-1 initially lacked functional DNS resolution and verified NTP synchronization.
+- Corrective actions restored NTP synchronization on both devices.
+- Two controlled syslog events demonstrated matching source and stored timestamps at one-second precision.
+- An independent collector-side packet capture confirmed close timestamp agreement for a third test event.
+- The third event was also verified in centralized syslog storage.
+
+**Evidence reference:** [RC002-M6-WP01-F04-Timestamp-Remediation.md](RC002-M6-WP01-F04-Timestamp-Remediation.md)
+
+**Residual limitations:** Historical timestamps remain unverified. Precise event-delivery latency, millisecond-level clock skew, and long-term synchronization stability have not been established. Original console transcripts and packet-capture files were not independently archived.
+
+**Finding disposition:** CLOSED WITH LIMITATIONS. The identified clock synchronization deficiencies were corrected and timestamp consistency was verified at the tested precision. The separate WP01-F10 latency finding remains OPEN.
+
 
 ### 4.3 Closed Finding — WP01-F01
 
