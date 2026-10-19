@@ -1,0 +1,5 @@
+2026-10-19T13:45:00+00:00 192.168.20.10 crond[1633]: USER root pid 1744 cmd run-parts /etc/periodic/15min
+2026-10-19T14:00:00+00:00 192.168.20.10 crond[1633]: USER root pid 1746 cmd run-parts /etc/periodic/15min
+2026-10-19T14:00:00+00:00 192.168.20.10 crond[1633]: USER root pid 1747 cmd run-parts /etc/periodic/hourly
+2026-10-19T14:15:00+00:00 192.168.20.10 crond[1633]: USER root pid 1749 cmd run-parts /etc/periodic/15min
+2026-10-19T14:30:00+00:00 192.168.20.10 crond[1633]: USER root pid 1751 cmd run-parts /etc/periodic/15min

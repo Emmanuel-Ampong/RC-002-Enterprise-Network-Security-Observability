@@ -133,13 +133,17 @@ The audit identified the following limitations:
 
 The reviewed M4 baseline summaries and trial datasets are consistent with the reported measurements for N01, N02, and N03.
 
-N04 provides categorical evidence of Syslog source attribution but does not establish a quantitative normal event-generation or collection rate.
+N04 originally provided categorical evidence of Syslog source attribution without establishing a quantitative normal event-generation or collection rate.
 
-A timestamp discrepancy was identified between the recorded collector observation window and the source-event timestamps.
+WP01-F03 remediation was conducted on 2026-10-19 using a controlled 60-minute observation window (13:38:50–14:38:50 UTC). The centralized collector retained five EDGE-R1 events and five SERVER-1 events, establishing observed collection rates of 5 events/hour per source and 10 events/hour combined.
 
-This discrepancy requires investigation. It must not be treated as conclusive proof of clock misconfiguration without additional verification.
+The event records, observation-window metadata, and SHA-256 checksum manifest are preserved in `RC002-WP01-F03-Repeat-Baseline/`. The methodology, measurements, integrity verification, and limitations are documented in `RC002-M6-WP01-F03-Quantitative-Baseline.md`.
 
-**Audit disposition:** Baseline measurements retained; quantitative Syslog baseline and timestamp-correlation limitations remain.
+The measurement represents one observation window of routine cron-related syslog activity. It does not establish long-term variability, complete source-to-collector event delivery, or a statistically representative baseline.
+
+The historical source-versus-collector timestamp discrepancy was investigated separately under WP01-F04, which is recorded as CLOSED WITH LIMITATIONS.
+
+**Audit disposition:** WP01-F03 CLOSED WITH LIMITATIONS. A controlled quantitative Syslog collection-rate comparator has been established and supported by integrity-verified evidence. Long-term baseline characterization and delivery-completeness assurance remain outside the demonstrated results.
 
 ### 3.3 M5 A01 — Connection Frequency
 
@@ -255,7 +259,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 |---|---|---|---|---|
 | WP01-F01 | A01 captures were stored under the M4 N03 directory | MEDIUM | Copy captures into M5 A01, verify SHA-256 fingerprints, and preserve them in Git | CLOSED |
 | WP01-F02 | M3 screenshot contents had not all been independently inspected | MEDIUM | Independently inspect all six M3 screenshots, assess whether each supports its stated claim, and document evidentiary limitations | CLOSED WITH LIMITATIONS |
-| WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | OPEN |
+| WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | CLOSED WITH LIMITATIONS |
 | WP01-F04 | Source and collector timestamps showed a substantial discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | CLOSED WITH LIMITATIONS |
 | WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims, document the historical measurement limitation, and define verifiable capture-quality measurements for future trials | CLOSED WITH LIMITATIONS |
 | WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the observation gap or formally document it as unresolved | OPEN |
