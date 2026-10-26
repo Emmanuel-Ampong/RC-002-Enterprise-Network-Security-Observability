@@ -180,7 +180,9 @@ For T02, the expected UDP/514 marker was absent from the retained filtered captu
 
 The available evidence does not justify classifying this absence as a confirmed transmission failure.
 
-The retained trial-summary records also lack quantitative packet-count, byte-count, and duration measurements.
+The original A02 trial-summary records lack quantitative packet-count, captured-byte, and duration measurements.
+
+Partial remediation of WP01-F07 recovered historical A02-T05 packet-level evidence from the original GNS3 capture `SERVER-1_eth0_to_SERVER-SW1_Ethernet1.pcap`. The reconstructed capture window (frames 40–72) contains 33 packets, totaling 2,549 captured bytes, over 31.410 seconds. Frame 66 contains the confirmed `RC002-A02-T05-UDP514` marker. The methodology, original capture SHA-256 fingerprint, recovered measurements, and limitations are documented in `RC002-M6-WP01-F07-T05-Capture-Recovery.md`. These values describe a reconstructed capture window, not independently verified complete-trial boundaries. Equivalent quantitative measurements remain unavailable for T01–T04. WP01-F07 therefore remains OPEN pending further evidence recovery or controlled measurement.
 
 **Audit disposition:** Partial evidence consistency; unresolved T02 observation and quantitative measurement gaps.
 
