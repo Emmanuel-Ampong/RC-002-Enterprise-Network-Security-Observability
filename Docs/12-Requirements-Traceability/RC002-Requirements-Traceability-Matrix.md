@@ -432,6 +432,37 @@ or comprehensive coverage of abnormal network behavior.
 **WP01-F05 Capture-Quality Qualification:**
 Independent inspection of all five M4 N02 baseline PCAP files and all five M5 A01 PCAPNG files found zero retained capture-interface statistics entries in each file. Consequently, historical claims of zero kernel packet-capture drops cannot be independently verified from the retained captures. This limitation does not invalidate the observed HTTP transactions or establish that capture drops occurred. Future trials require retained capture-tool drop counters, relevant interface statistics, and supporting measurement logs. See `Docs/14-M6-Research-Execution/RC002-M6-WP01-Evidence-Audit.md`, Section 4.2.2.
 
+
+**WP01-F07 Quantitative Evidence Qualification:**
+
+Five controlled A02 quantitative repeat trials (R01–R05) were executed to address the missing quantitative measurements identified during the WP01 evidence audit.
+
+The consolidated repeat-trial results established:
+
+- 161 observed packets and 12,647 frame bytes.
+- A mean marker-defined experimental duration of 12.2532 seconds.
+- Consistent observation of 12 ICMP packets in each trial.
+- Successful internal and external ICMP connectivity across all five trials.
+- Successful TCP/22 and TCP/514 reachability across all five trials.
+- Successful collector receipt of all 15 controlled UDP/514 markers.
+- Independently validated descriptive and protocol-level statistics.
+- SHA-256 integrity fingerprints for all five preserved packet captures.
+
+**Supplementary Verification Evidence:**
+
+- [A02-F07 Consolidated Quantitative Repeat Trial Analysis](../14-M6-Research-Execution/RC002-WP01-F07-A02-Repeat-Trials/A02-F07-Consolidated-Repeat-Trial-Analysis.md)
+
+The repeat-trial results strengthen the quantitative evidence supporting FR-07 and demonstrate preliminary experimental repeatability within the tested conditions.
+
+However, the newly generated measurements do not retrospectively recover the missing original A02 measurements. The repeat procedure does not reproduce every original HTTP/HTTPS activity, and the original missing UDP collector marker and unexplained ICMP unreachable observation remain unresolved.
+
+Cross-system timestamp discrepancies also restrict latency-sensitive interpretation.
+
+**WP01-F07 Proposed Disposition:** CLOSED WITH DOCUMENTED LIMITATIONS.
+
+**Impact on FR-07 Requirement Status:** PASS WITH LIMITATION — unchanged.
+
+
 **Outstanding Verification Work:**
 - Strengthen comparable normal-versus-abnormal baselines.
 - Investigate unexplained telemetry gaps.
