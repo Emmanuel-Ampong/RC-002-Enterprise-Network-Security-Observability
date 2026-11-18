@@ -2,7 +2,7 @@
 
 ## Project Initiation
 
-**Project:** RC-002 â€” Enterprise Network Security Observability and Telemetry
+**Project:** RC-002 — Enterprise Network Security Observability and Telemetry
 **Project Aegis Phase:** OBSERVE
 **Stage:** Research Design / Requirements Development
 
@@ -49,7 +49,7 @@ Develop:
 
 ---
 
-## Requirements Engineering â€” Initial Baseline
+## Requirements Engineering — Initial Baseline
 
 ### Activities
 
@@ -139,7 +139,7 @@ Decision Record before beginning environment installation.
 
 ---
 
-## M1 â€” GNS3 Laboratory Environment Deployment
+## M1 — GNS3 Laboratory Environment Deployment
 
 ### Status
 
@@ -190,7 +190,7 @@ Normal non-administrator launch of GNS3 was also verified.
 Develop the minimum experimental topology for RC-002 and select the
 network and Linux node types required for telemetry experimentation.
 
-## 2026-09-10 â€” M2 Minimum Observability Topology
+## 2026-09-10 — M2 Minimum Observability Topology
 
 ### Objective
 
@@ -202,9 +202,9 @@ subsequent security-observability and telemetry experiments in RC-002.
 - Built the RC-002 experimental topology in GNS3.
 - Deployed FRRouting as `EDGE-R1`.
 - Created three internal network zones:
-  - USER â€” `192.168.10.0/24`
-  - SERVER â€” `192.168.20.0/24`
-  - OBSERVABILITY â€” `192.168.30.0/24`
+  - USER — `192.168.10.0/24`
+  - SERVER — `192.168.20.0/24`
+  - OBSERVABILITY — `192.168.30.0/24`
 - Added a GNS3 NAT-based WAN segment on `192.168.42.0/24`.
 - Configured EDGE-R1 as the Layer-3 gateway between the internal zones.
 - Deployed two VPCS user endpoints: `CLIENT-1` and `CLIENT-2`.
@@ -254,7 +254,7 @@ detection, and event correlation remain intentionally outside the M2 scope.
 
 **Milestone Status: VERIFIED**
 
-## M3 â€” Telemetry Collection Foundation
+## M3 — Telemetry Collection Foundation
 
 **Status:** Complete
 **Verification:** `Docs/06-Verification/RC002-M3-Telemetry-Collection-Foundation.md`
