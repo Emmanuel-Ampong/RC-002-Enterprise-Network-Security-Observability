@@ -182,9 +182,42 @@ The available evidence does not justify classifying this absence as a confirmed 
 
 The original A02 trial-summary records lack quantitative packet-count, captured-byte, and duration measurements.
 
-Partial remediation of WP01-F07 recovered historical A02-T05 packet-level evidence from the original GNS3 capture `SERVER-1_eth0_to_SERVER-SW1_Ethernet1.pcap`. The reconstructed capture window (frames 40–72) contains 33 packets, totaling 2,549 captured bytes, over 31.410 seconds. Frame 66 contains the confirmed `RC002-A02-T05-UDP514` marker. The methodology, original capture SHA-256 fingerprint, recovered measurements, and limitations are documented in `RC002-M6-WP01-F07-T05-Capture-Recovery.md`. These values describe a reconstructed capture window, not independently verified complete-trial boundaries. Equivalent quantitative measurements remain unavailable for T01–T04. WP01-F07 therefore remains OPEN pending further evidence recovery or controlled measurement.
 
-**Audit disposition:** Partial evidence consistency; unresolved T02 observation and quantitative measurement gaps.
+**WP01-F07 — Historical Evidence Recovery and Quantitative Remediation:**
+
+Initial remediation recovered historical A02-T05 packet-level evidence from the original GNS3 capture `SERVER-1_eth0_to_SERVER-SW1_Ethernet1.pcap`. The reconstructed observation window (frames 40–72) contained 33 packets, 2,549 captured bytes, and a duration of 31.410 seconds. Frame 66 contained the confirmed `RC002-A02-T05-UDP514` marker.
+
+The recovery methodology, original capture SHA-256 fingerprint, recovered measurements, and limitations are documented in `RC002-M6-WP01-F07-T05-Capture-Recovery.md`.
+
+These historical measurements describe a reconstructed capture window rather than independently verified complete-trial boundaries. Equivalent quantitative measurements remain unavailable for the original A02-T01–T04 trials.
+
+Subsequent remediation involved five newly executed controlled quantitative repeat trials, R01–R05, conducted on November 16–17, 2026.
+
+The repeat trials established:
+
+- 161 captured packets across five marker-defined observation windows.
+- 12,647 total captured frame bytes.
+- 61.266 seconds of combined experimental observation time.
+- Consistent observation of 12 ICMP packets per trial.
+- Successful internal and external ICMP connectivity across all five trials.
+- Successful TCP/22 and TCP/514 connectivity checks across all five trials.
+- Independent collector confirmation of all 15 controlled UDP/514 experimental markers.
+- Five preserved PCAP files with documented SHA-256 fingerprints.
+- Independently validated descriptive and protocol-level statistics.
+
+**Consolidated Verification Evidence:**
+
+[A02-F07 Consolidated Quantitative Repeat Trial Analysis](RC002-WP01-F07-A02-Repeat-Trials/A02-F07-Consolidated-Repeat-Trial-Analysis.md)
+
+These new measurements provide quantitative evidence supporting controlled destination and service diversity observations and preliminary experimental repeatability.
+
+However, the repeat trials do not retrospectively recover missing original A02 measurements or reproduce every original HTTP/HTTPS activity. Background traffic, limited trial count, and cross-system timestamp discrepancies also constrain interpretation.
+
+The original missing A02-T02 UDP collector marker remains a separate unresolved finding under WP01-F06.
+
+**WP01-F07 Final Disposition:** CLOSED WITH LIMITATIONS. Five controlled quantitative repeat trials have been completed, independently analyzed, and published. The original A02 measurements remain partially unrecovered, and the repeat procedure does not fully reproduce the original experiment.
+
+**Audit disposition:** The A02 quantitative evidence gap has been remediated through five newly executed, independently analyzed controlled repeat trials (R01–R05). The original A02-T01–T04 quantitative measurements remain unrecovered, and the repeat procedure does not fully reproduce the original experiment. WP01-F07 is CLOSED WITH LIMITATIONS. The missing original A02-T02 UDP collector marker remains unresolved and separately tracked under WP01-F06.
 
 ### 3.5 M5 A03 — Controlled Denied Access
 
@@ -265,7 +298,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | WP01-F04 | Source and collector timestamps showed a substantial discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | CLOSED WITH LIMITATIONS |
 | WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims, document the historical measurement limitation, and define verifiable capture-quality measurements for future trials | CLOSED WITH LIMITATIONS |
 | WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the observation gap or formally document it as unresolved | OPEN |
-| WP01-F07 | A02 trial records lack quantitative packet, byte, and duration metrics | MEDIUM | Define and collect measurable traffic-diversity observations | OPEN |
+| WP01-F07 | A02 trial records lack quantitative packet, byte, and duration metrics | MEDIUM | Define and collect measurable traffic-diversity observations | CLOSED WITH LIMITATIONS |
 | WP01-F08 | A03 lacks a complete normal-versus-denied comparator | HIGH | Establish controlled comparator evidence and verify operational recovery | OPEN |
 | WP01-F09 | A04 contains trial exceptions and incomplete supporting documentation | MEDIUM | Reconcile trial records, identify missing evidence, and preserve explicit limitations | OPEN |
 | WP01-F10 | A04 event-delivery latency cannot be established without verified clock synchronization | HIGH | Validate time synchronization before making quantitative latency claims | OPEN |
