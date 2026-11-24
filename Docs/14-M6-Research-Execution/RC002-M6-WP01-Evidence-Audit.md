@@ -213,11 +213,13 @@ These new measurements provide quantitative evidence supporting controlled desti
 
 However, the repeat trials do not retrospectively recover missing original A02 measurements or reproduce every original HTTP/HTTPS activity. Background traffic, limited trial count, and cross-system timestamp discrepancies also constrain interpretation.
 
-The original missing A02-T02 UDP collector marker remains a separate unresolved finding under WP01-F06.
+The original A02-T02 UDP/514 marker remains unverified in the retained historical evidence. WP01-F06 has been administratively CLOSED WITH LIMITATIONS following the documented investigation. A procedural omission is a plausible but unconfirmed explanation; neither the original transmission nor collector receipt has been established. See the [WP01-F06 A02-T02 Marker Investigation](RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md).
+
 
 **WP01-F07 Final Disposition:** CLOSED WITH LIMITATIONS. Five controlled quantitative repeat trials have been completed, independently analyzed, and published. The original A02 measurements remain partially unrecovered, and the repeat procedure does not fully reproduce the original experiment.
 
-**Audit disposition:** The A02 quantitative evidence gap has been remediated through five newly executed, independently analyzed controlled repeat trials (R01–R05). The original A02-T01–T04 quantitative measurements remain unrecovered, and the repeat procedure does not fully reproduce the original experiment. WP01-F07 is CLOSED WITH LIMITATIONS. The missing original A02-T02 UDP collector marker remains unresolved and separately tracked under WP01-F06.
+**Audit disposition:** The A02 quantitative evidence gap has been addressed through five newly executed, independently analyzed controlled repeat trials (R01–R05). The original A02-T01–T04 quantitative measurements remain unrecovered, and the repeat procedure does not fully reproduce the original experiment. WP01-F07 is CLOSED WITH LIMITATIONS. The separate WP01-F06 investigation examined the missing original A02-T02 UDP/514 marker using historical execution records, shell history, packet-capture evidence, and collector logs. A procedural omission is plausible but unconfirmed. The original T02 transmission and collector receipt remain unverified. WP01-F06 is CLOSED WITH LIMITATIONS as an investigated historical evidence gap, not as a confirmed successful transmission. See [F06 Investigation Report](RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md).
+
 
 ### 3.5 M5 A03 — Controlled Denied Access
 
@@ -297,7 +299,7 @@ A finding is marked **CLOSED** only when its corrective action has been complete
 | WP01-F03 | M4 N04 lacks a quantitative normal Syslog event-rate baseline | HIGH | Establish a controlled, measurable normal event-rate comparator | CLOSED WITH LIMITATIONS |
 | WP01-F04 | Source and collector timestamps showed a substantial discrepancy | HIGH | Verify clocks, time zones, and timestamp interpretation before correlation analysis | CLOSED WITH LIMITATIONS |
 | WP01-F05 | A01 PCAPNG files lack capture-interface statistics entries | MEDIUM | Qualify capture-drop claims, document the historical measurement limitation, and define verifiable capture-quality measurements for future trials | CLOSED WITH LIMITATIONS |
-| WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the observation gap or formally document it as unresolved | OPEN |
+| WP01-F06 | A02 T02 UDP/514 marker was not confirmed in retained evidence | HIGH | Investigate the missing transmission/receipt observation, preserve historical uncertainty, and document suspected procedural omission in [F06 Investigation Report](RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md) | CLOSED WITH LIMITATIONS |
 | WP01-F07 | A02 trial records lack quantitative packet, byte, and duration metrics | MEDIUM | Define and collect measurable traffic-diversity observations | CLOSED WITH LIMITATIONS |
 | WP01-F08 | A03 lacks a complete normal-versus-denied comparator | HIGH | Establish controlled comparator evidence and verify operational recovery | OPEN |
 | WP01-F09 | A04 contains trial exceptions and incomplete supporting documentation | MEDIUM | Reconcile trial records, identify missing evidence, and preserve explicit limitations | OPEN |
