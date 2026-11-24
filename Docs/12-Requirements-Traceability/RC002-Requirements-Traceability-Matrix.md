@@ -458,6 +458,18 @@ However, the newly generated measurements do not retrospectively recover the mis
 
 Cross-system timestamp discrepancies also restrict latency-sensitive interpretation.
 
+**WP01-F06 Historical UDP/514 Marker Investigation:**
+
+The original A02-T02 UDP/514 marker transmission and collector receipt remain unverified. Investigation of the original execution screenshots, surviving SERVER-1 command history, historical packet captures, and available collector logs identified no affirmative evidence of the expected marker. A procedural omission is a plausible explanation but has not been conclusively established.
+
+**WP01-F06 Final Disposition:** CLOSED WITH LIMITATIONS. The historical evidence gap has been investigated and documented, but the original transmission, collector receipt, and definitive root cause remain unverified. Administrative closure does not imply successful UDP/514 delivery.
+
+**Supporting Evidence:**
+
+- [WP01-F06 A02-T02 Missing Marker Investigation](../14-M6-Research-Execution/RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md)
+- [M6 WP01 Evidence Audit](../14-M6-Research-Execution/RC002-M6-WP01-Evidence-Audit.md)
+
+
 **WP01-F07 Proposed Disposition:** CLOSED WITH DOCUMENTED LIMITATIONS.
 
 **Impact on FR-07 Requirement Status:** PASS WITH LIMITATION — unchanged.
@@ -1058,7 +1070,7 @@ or chain-of-custody procedure has been verified.
 
 **Outstanding Verification Work:**
 - Define integrity criteria for retained telemetry.
-- Investigate the missing A02 collector marker.
+- Preserve the unresolved original A02-T02 UDP/514 transmission and collector-receipt observations as historical evidence limitations. The investigation is complete under WP01-F06 (CLOSED WITH LIMITATIONS); a procedural omission remains plausible but unconfirmed.
 - Establish file-hashing procedures for evidence.
 - Verify hashes before and after evidence handling.
 - Review log storage permissions and modification risks.
@@ -1484,8 +1496,7 @@ integrity, completeness, or reproducibility.
 **Recommended Follow-Up:**
 - Audit retained artifacts against the
   corresponding experimental protocols.
-- Investigate the missing A02 marker
-  without assuming its cause.
+- Preserve the completed WP01-F06 investigation of the missing A02-T02 UDP/514 marker (CLOSED WITH LIMITATIONS). The original transmission and collector receipt remain unverified, and a procedural omission is plausible but not conclusively established. See [WP01-F06 Investigation Report](../14-M6-Research-Execution/RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md).
 - Identify and document missing or
   inconsistent evidence.
 - Establish a lightweight SHA-256
@@ -1773,8 +1784,22 @@ of evidence retained during milestones M3 through M5.
 - Updated traceability findings.
 - Documented unresolved evidence limitations.
 
-**Status:** PROPOSED
+**Status:** IN PROGRESS
 
+**Execution Update — 2026-11-24:**
+
+WP-01 evidence auditing and corrective-action activities are underway. WP01-F01 through WP01-F07 have been administratively closed, with documented limitations where applicable.
+
+The original A02-T02 missing UDP/514 marker was investigated under WP01-F06. A possible procedural omission was identified, but neither the original marker transmission nor collector receipt could be conclusively established.
+
+**WP01-F06 Disposition:** CLOSED WITH LIMITATIONS.
+
+The original WP-01 proposed activities and acceptance criteria are preserved above as planning records. Other open findings, including WP01-F08 through WP01-F12, require further investigation and corrective action before WP-01 can be considered complete.
+
+**Supporting Evidence:**
+
+- [WP01-F06 Investigation Report](../14-M6-Research-Execution/RC002-M6-WP01-F06-A02-T02-Marker-Investigation.md)
+- [M6 WP01 Evidence Audit](../14-M6-Research-Execution/RC002-M6-WP01-Evidence-Audit.md)
 --- 
 
 #### WP-02 — Operational Regression Baseline
